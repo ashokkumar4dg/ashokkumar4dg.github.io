@@ -70,8 +70,39 @@ body {
 }
 
 /* ==========================================================================
+   Image Skeleton Shimmer & Smooth Fade-In on Load
+   ========================================================================== */
+
+@keyframes shimmer {
+    0%   { background-position: -600px 0; }
+    100% { background-position: 600px 0; }
+}
+
+/* While image is loading: show a moving shimmer */
+.img-skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--card-bg) 25%,
+        var(--border) 50%,
+        var(--card-bg) 75%
+    );
+    background-size: 600px 100%;
+    animation: shimmer 1.4s infinite linear;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Once image has loaded: fade in smoothly */
+.img-skeleton.img-loaded {
+    animation: none;
+    background: none;
+    opacity: 1;
+}
+
+/* ==========================================================================
    Global Animated Geometric Grid — Dynamic Perspective Illusion
    ========================================================================== */
+
 
 /* Keyframe: grid lines drift inward from edges → creates zoom-in perspective illusion */
 @keyframes gridPulse {

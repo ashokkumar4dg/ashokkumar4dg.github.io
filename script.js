@@ -5,6 +5,19 @@ function initPortfolio() {
     }
 
     // ==========================================================================
+    // Image Skeleton Fade-In: remove shimmer & fade in when image is ready
+    // ==========================================================================
+    document.querySelectorAll('img.img-skeleton').forEach(img => {
+        const reveal = () => img.classList.add('img-loaded');
+        if (img.complete && img.naturalWidth > 0) {
+            reveal();
+        } else {
+            img.addEventListener('load', reveal);
+            img.addEventListener('error', reveal); // still remove shimmer on error
+        }
+    });
+
+    // ==========================================================================
     // Theme Switcher Logic (Dark / Light Theme)
     // ==========================================================================
     const themeBtn = document.getElementById('theme-btn');
@@ -15,13 +28,13 @@ function initPortfolio() {
         // Navbar logo
         const navLogo = document.getElementById('nav-logo-img');
         if (navLogo) {
-            navLogo.src = theme === 'light' ? 'assets/Logo2.png' : 'assets/Logo1.png';
+            navLogo.src = theme === 'light' ? 'assets/Logo2.webp' : 'assets/Logo1.webp';
         }
 
         // Favicon
         let favicon = document.querySelector("link[rel='icon']");
         if (favicon) {
-            favicon.href = theme === 'light' ? 'assets/Logo2.png' : 'assets/Logo1.png';
+            favicon.href = theme === 'light' ? 'assets/Logo2.webp' : 'assets/Logo1.webp';
         }
     };
 
@@ -181,8 +194,8 @@ function initPortfolio() {
             palette: ['#09090b', '#fafafa', '#a1a1aa', '#27272a'],
             fontHeading: 'Archivo',
             fontBody: 'Space Grotesk',
-            banner: 'assets/project-brand.png',
-            gallery: ['assets/project-brand.png', 'assets/project-brand.png']
+            banner: 'assets/project-brand.webp',
+            gallery: ['assets/project-brand.webp', 'assets/project-brand.webp']
         },
         'social': {
             category: 'Social Media',
@@ -195,8 +208,8 @@ function initPortfolio() {
             palette: ['#fafafa', '#a1a1aa', '#ff5a5f', '#18181b'],
             fontHeading: 'Space Grotesk',
             fontBody: 'Archivo',
-            banner: 'assets/project-social.png',
-            gallery: ['assets/project-social.png', 'assets/project-social.png']
+            banner: 'assets/project-social.webp',
+            gallery: ['assets/project-social.webp', 'assets/project-social.webp']
         },
         'book': {
             category: 'Book Cover Layout',
@@ -209,8 +222,8 @@ function initPortfolio() {
             palette: ['#c29f63', '#1e293b', '#fafafa', '#0f172a'],
             fontHeading: 'Archivo',
             fontBody: 'Space Grotesk',
-            banner: 'assets/project-book.png',
-            gallery: ['assets/project-book.png', 'assets/project-book.png']
+            banner: 'assets/project-book.webp',
+            gallery: ['assets/project-book.webp', 'assets/project-book.webp']
         },
         'web': {
             category: 'UI/UX Design',
@@ -223,8 +236,8 @@ function initPortfolio() {
             palette: ['#000000', '#ffffff', '#22c55e', '#18181b'],
             fontHeading: 'Space Grotesk',
             fontBody: 'Space Grotesk',
-            banner: 'assets/project-web.png',
-            gallery: ['assets/project-web.png', 'assets/project-web.png']
+            banner: 'assets/project-web.webp',
+            gallery: ['assets/project-web.webp', 'assets/project-web.webp']
         },
         'poster': {
             category: 'Poster Art',
@@ -237,8 +250,8 @@ function initPortfolio() {
             palette: ['#000000', '#ffffff', '#f4f4f5', '#a1a1aa'],
             fontHeading: 'Archivo',
             fontBody: 'Space Grotesk',
-            banner: 'assets/project-poster.png',
-            gallery: ['assets/project-poster.png', 'assets/project-poster.png']
+            banner: 'assets/project-poster.webp',
+            gallery: ['assets/project-poster.webp', 'assets/project-poster.webp']
         },
         'invitation': {
             category: 'Print Design',
@@ -251,8 +264,8 @@ function initPortfolio() {
             palette: ['#c5a880', '#2d3748', '#fafafa', '#edf2f7'],
             fontHeading: 'Playfair Display / Serif',
             fontBody: 'Space Grotesk',
-            banner: 'assets/project-invitation.png',
-            gallery: ['assets/project-invitation.png', 'assets/project-invitation.png']
+            banner: 'assets/project-invitation.webp',
+            gallery: ['assets/project-invitation.webp', 'assets/project-invitation.webp']
         }
     };
 
