@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Ashok Kumar, a freelance Brand & UI/UX Designer helping startups and creators build standout visual brands. Explore logos, social media designs, and book covers.">
+    <title>Ashok Kumar | Freelance Brand & UI/UX Designer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/Logo1.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-outline" id="cursor-outline"></div>
+
+    <!-- Floating Navigation Bar -->
+    <header class="navbar" id="main-navbar">
+        <div class="navbar-container">
+            <a href="#" class="nav-logo" id="logo-link">
+                <img src="assets/Logo1.png" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img">
+            </a>
+            
+            <nav class="nav-menu" id="nav-links">
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="navbar-actions">
+                <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark/light mode">
+                    <!-- Sun Icon for Light Mode -->
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <!-- Moon Icon for Dark Mode -->
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <i data-lucide="menu" class="menu-open"></i>
+                    <i data-lucide="x" class="menu-close"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+ 
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero-sec">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-tag status-hiring animate-in">
+                        <span class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span class="status-ping"></span>
+                        </span>
+                        Available for Hiring
+                    </div>
+                    <h1 class="hero-title animate-in delay-1">
+                        Ashok <span class="highlight">Kumar</span>
+                    </h1>
+                    <p class="hero-subtitle animate-in delay-2">
+                        Freelance Brand & UI/UX Designer creating bold, scroll-stopping visuals & digital experiences that connect and convert.
+                    </p>
+                    <div class="hero-ctas animate-in delay-3">
+                        <a href="#work" class="btn btn-primary" id="hero-primary-cta">Explore Work</a>
+                        <a href="#contact" class="btn btn-secondary" id="hero-secondary-cta">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper animate-in delay-2">
+                    <div class="profile-image-container" id="profile-container">
+                        <!-- Dark Theme Images -->
+                        <img src="assets/WhiteShirt_Transparent.png" alt="Ashok Kumar Profile Photo" class="profile-img real-img dark-theme-img" id="profile-pic-real-dark">
+                        <img src="assets/WhiteTshirt_3D.png" alt="Ashok Kumar 3D Cartoon" class="profile-img cartoon-img dark-theme-img" id="profile-pic-cartoon-dark">
+                        
+                        <!-- Light Theme Images -->
+                        <img src="assets/BlackShirt.png" alt="Ashok Kumar Profile Photo" class="profile-img real-img light-theme-img" id="profile-pic-real-light">
+                        <img src="assets/BlackTshirt_3D.png" alt="Ashok Kumar 3D Cartoon" class="profile-img cartoon-img light-theme-img" id="profile-pic-cartoon-light">
+                        
+                        <div class="profile-ring"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" id="scroll-prompt">
+                <span class="scroll-text">Scroll Down</span>
+                <i data-lucide="arrow-down" class="scroll-icon"></i>
+            </div>
+        </section>
+
+        <!-- Work/Portfolio Section -->
+        <section class="work" id="work">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Selected Projects</h2>
+                    <p class="section-subtitle">A curated showcase of branding systems, creative social campaigns, print materials, and digital interfaces.</p>
+                </div>
+                
+                <!-- Category Filter Tags -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all" id="filter-all">All Works</button>
+                    <button class="filter-btn" data-filter="brand" id="filter-brand">Branding</button>
+                    <button class="filter-btn" data-filter="social" id="filter-social">Social Media</button>
+                    <button class="filter-btn" data-filter="book" id="filter-book">Book Covers</button>
+                    <button class="filter-btn" data-filter="web" id="filter-web">UI/UX & Web</button>
+                    <button class="filter-btn" data-filter="poster" id="filter-poster">Posters</button>
+                    <button class="filter-btn" data-filter="invitation" id="filter-invitation">Invitations</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="portfolio-grid" id="projects-grid">
+                    <!-- Project 1: Brand Identity -->
+                    <article class="project-card" data-category="brand">
+                        <div class="project-img-container">
+                            <img src="assets/project-brand.png" alt="Identity and Branding Systems Mockup" class="project-img">
+                            <div class="project-overlay">
+                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Brand Identity</span>
+                                <span class="tag">Logo Design</span>
+                            </div>
+                            <h3 class="project-card-title">Identity & Branding Systems</h3>
+                            <p class="project-card-desc">Cohesive brand identities and logo designs reflecting custom business personalities. From initial concept to final market-ready vector files.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Social Media -->
+                    <article class="project-card" data-category="social">
+                        <div class="project-img-container">
+                            <img src="assets/project-social.png" alt="Social Media Creative Campaign Mockup" class="project-img">
+                            <div class="project-overlay">
+                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Social Media</span>
+                                <span class="tag">Marketing Graphics</span>
+                            </div>
+                            <h3 class="project-card-title">Social Media Creative Campaign</h3>
+                            <p class="project-card-desc">Platform-optimized, scroll-stopping visual assets designed to boost engagement, reach, and grid consistency across Instagram and LinkedIn.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Book Covers -->
+                    <article class="project-card" data-category="book">
+                        <div class="project-img-container">
+                            <img src="assets/project-book.png" alt="Premium Book Cover Layouts Mockup" class="project-img">
+                            <div class="project-overlay">
+                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Book Cover</span>
+                                <span class="tag">Print Design</span>
+                            </div>
+                            <h3 class="project-card-title">Premium Book Cover Layouts</h3>
+                            <p class="project-card-desc">High-impact book cover designs designed to make readers stop, look, and buy. Spanning fiction, self-help, and non-fiction genres.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: UI/UX & Web -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-img-container">
+                            <img src="assets/project-web.png" alt="UI/UX and Vibe-Coded Web Designs Mockup" class="project-img">
+                            <div class="project-overlay">
+                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">UI/UX Design</span>
+                                <span class="tag">Vibe Coding</span>
+                            </div>
+                            <h3 class="project-card-title">UI/UX & Vibe-Coded Web Designs</h3>
+                            <p class="project-card-desc">Clean, modern, and user-friendly web interfaces blending trending aesthetics with functional, high-converting responsive layouts.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Posters -->
+                    <article class="project-card" data-category="poster">
+                        <div class="project-img-container">
+                            <img src="assets/project-poster.png" alt="Creative Poster Design Showcase" class="project-img">
+                            <div class="project-overlay">
+                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Poster Art</span>
+                                <span class="tag">Graphic Design</span>
+                            </div>
+                            <h3 class="project-card-title">Creative Poster Design Showcase</h3>
+                            <p class="project-card-desc">A curated compilation of minimalist, geometric, and Swiss-style print poster designs exploring shape, typography, and contrast.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Invitations -->
+                    <article class="project-card" data-category="invitation">
+                        <div class="project-img-container">
+                            <img src="assets/project-invitation.png" alt="Premium Invitation Layouts" class="project-img">
+                            <div class="project-overlay">
+                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Print Design</span>
+                                <span class="tag">Stationery Layout</span>
+                            </div>
+                            <h3 class="project-card-title">Premium Invitation Layouts</h3>
+                            <p class="project-card-desc">Bespoke, typography-centered invitation design cards exploring luxurious textures, print margins, and visual balance.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about" id="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">About My Approach</h2>
+                    <p class="section-subtitle">Bringing typography, color theory, layout, and visual hierarchy together to make brands communicate and convert.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-bio">
+                        <p class="bio-highlight">
+                            I help startups, content creators, authors, and small brands turn complex ideas into visuals that actually resonate. 
+                        </p>
+                        <p class="bio-text">
+                            Whether it's a logo that captures a brand's personality, a social media feed that stops the scroll, a book cover that makes readers pick it up, or a clean website interface, I believe visual design should be intentional, scalable, and market-ready—not just pretty. I care about understanding the <strong>'why'</strong> behind a brand before I design the <strong>'what.'</strong>
+                        </p>
+                        <p class="bio-text">
+                            Driven by curiosity, I've spent years learning how design solves real-world business problems. My journey includes hands-on experience designing e-commerce banners and website carousels during my internship at SouqArena.
+                        </p>
+                    </div>
+
+                    <div class="about-skills">
+                        <div class="skills-card">
+                            <h3 class="skills-title"><i data-lucide="wrench" class="skill-header-icon"></i> Technical Toolkit</h3>
+                            <div class="tech-grid">
+                                <div class="tech-item" title="UI/UX & Prototyping"><span class="tech-dot active"></span> Figma</div>
+                                <div class="tech-item" title="Image Editing & Manipulation"><span class="tech-dot active"></span> Photoshop</div>
+                                <div class="tech-item" title="Vector Layouts & Branding"><span class="tech-dot active"></span> Illustrator</div>
+                                <div class="tech-item" title="Page Layout & Publishing"><span class="tech-dot active"></span> InDesign</div>
+                                <div class="tech-item" title="Video Editing & Effects"><span class="tech-dot active"></span> CapCut</div>
+                                <div class="tech-item" title="Asset & Fast Templates"><span class="tech-dot active"></span> Canva</div>
+                                <div class="tech-item" title="Alternative Design Tools"><span class="tech-dot active"></span> Affinity Suite</div>
+                                <div class="tech-item" title="Generative Assets & Inspiration"><span class="tech-dot active"></span> AI Design Tools</div>
+                            </div>
+                        </div>
+
+                        <div class="skills-card">
+                            <h3 class="skills-title"><i data-lucide="palette" class="skill-header-icon"></i> Design Competencies</h3>
+                            <ul class="competencies-list">
+                                <li>Brand Identity & Logo Systems</li>
+                                <li>Social Media Creatives & Ads</li>
+                                <li>Book Cover Layout Design</li>
+                                <li>UI/UX Wireframing & Web Layouts</li>
+                                <li>Poster & Print Media Design</li>
+                                <li>Typography & Grid Layouts</li>
+                            </ul>
+                        </div>
+
+                        <div class="skills-card">
+                            <h3 class="skills-title"><i data-lucide="languages" class="skill-header-icon"></i> Languages</h3>
+                            <div class="languages-container">
+                                <div class="lang-item">
+                                    <div class="lang-info">
+                                        <span>Hindi <span class="lang-detail">(Native / Fluent)</span></span>
+                                        <span>80%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="lang-item">
+                                    <div class="lang-info">
+                                        <span>English <span class="lang-detail">(Professional Working)</span></span>
+                                        <span>35%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar" style="width: 35%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section class="experience" id="experience">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Professional Journey</h2>
+                    <p class="section-subtitle">My professional evolution, featuring agency internships, freelance work, and academic foundations.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line">
+                        <div class="timeline-progress-bar"></div>
+                    </div>
+
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item animate-reveal">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <div class="marker-icon-container" title="Graphic Design Work">
+                                <i data-lucide="palette"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Sept 2025 - Present</span>
+                            <h3 class="timeline-role">Senior Graphic Designer</h3>
+                            <h4 class="timeline-company">Freelance | Self-Employed</h4>
+                            <p class="timeline-desc">
+                                Designing bold, scroll-stopping visuals and digital experiences. Helping startups, creators, authors, and brands stand out through intentional and custom visual designs spanning logos, social banners, covers, and high-converting web templates.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item animate-reveal">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <div class="marker-icon-container" title="Professional Internship">
+                                <i data-lucide="briefcase"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Nov 2024 - Jan 2025</span>
+                            <h3 class="timeline-role">Project Intern</h3>
+                            <h4 class="timeline-company">SouqArena</h4>
+                            <p class="timeline-desc">
+                                Accelerated the brand's visual expression and marketing efforts. Designed high-impact e-commerce web homepage banners, product carousels, and landing layouts that optimized user experience and click-through rates.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 (Education) -->
+                    <div class="timeline-item animate-reveal">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <div class="marker-icon-container" title="Academic Education">
+                                <i data-lucide="graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">June 2022 - May 2024</span>
+                            <h3 class="timeline-role">Bachelor of Computer Application (BCA)</h3>
+                            <h4 class="timeline-company">Jai Narain Vyas University (JNVU), Jodhpur</h4>
+                            <p class="timeline-desc">
+                                Acquired a robust foundation in computer science, software applications, administration, and digital workflows. This technical literacy complements my design career, enabling smooth design-to-code execution.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="contact-tag">Get in Touch</span>
+                    <h2 class="section-title">Let's craft something memorable.</h2>
+                    <p class="section-subtitle">Whether you're starting a new brand, launching a product, publishing a book, or looking to collaborate—let's make it stand out.</p>
+                </div>
+                
+                <div class="contact-layout">
+                    <div class="contact-info">
+                                             <div class="contact-details">
+                             <a href="mailto:ashokkumar4dg@gmail.com" class="contact-detail-item" id="email-contact">
+                                <div class="contact-icon-box">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="contact-detail-text">
+                                    <span class="detail-label">Email me directly</span>
+                                    <span class="detail-value">ashokkumar4dg@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/918696289847" target="_blank" rel="noopener noreferrer" class="contact-detail-item" id="whatsapp-contact">
+                                <div class="contact-icon-box">
+                                    <i data-lucide="message-circle"></i>
+                                </div>
+                                <div class="contact-detail-text">
+                                    <span class="detail-label">WhatsApp — quick reply</span>
+                                    <span class="detail-value">+91 8696289847</span>
+                                </div>
+                            </a>
+
+                            <div class="contact-detail-item">
+                                <div class="contact-icon-box">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div class="contact-detail-text">
+                                    <span class="detail-label">Based in</span>
+                                    <span class="detail-value">Rajasthan, India · Remote friendly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links-grid">
+                            <a href="https://www.behance.net/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Behance" aria-label="Behance Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 5h5a3.5 3.5 0 0 1 0 7H3zm0 7h6a3.5 3.5 0 0 1 0 7H3z" />
+                                    <path d="M13 14h7" />
+                                    <path d="M20 12a3 3 0 0 0-6 0v2a3 3 0 0 0 6 0" />
+                                    <path d="M14 8h5" />
+                                </svg> Behance
+                            </a>
+                            <a href="https://www.linkedin.com/in/ashokkumar4dg/" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="LinkedIn" aria-label="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect width="4" height="12" x="2" y="9" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg> LinkedIn
+                            </a>
+                            <a href="https://instagram.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Instagram" aria-label="Instagram Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                </svg> Instagram
+                            </a>
+                            <a href="https://twitter.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Twitter" aria-label="Twitter Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                                </svg> Twitter
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="portfolio-contact-form" action="#" method="POST">
+                            <h3 class="form-title">Send a Message</h3>
+                            <p class="form-subtitle">Fills straight to my WhatsApp — no middleman.</p>
+
+                            <!-- Step 1: Name -->
+                            <div class="form-group">
+                                <input type="text" id="form-name" name="name" required placeholder=" " class="form-input" autocomplete="name">
+                                <label for="form-name" class="form-label">Your Name</label>
+                            </div>
+
+                            <!-- Step 2: Reason (pill selector) -->
+                            <div class="form-group">
+                                <p class="form-pill-label">Why are you reaching out?</p>
+                                <div class="form-pills" id="reason-pills" role="group" aria-label="Reason for contact">
+                                    <button type="button" class="reason-pill" data-value="I want to hire you for a Freelance Project">🎨 Freelance Project</button>
+                                    <button type="button" class="reason-pill" data-value="I want to hire you Full-time">💼 Full-time Hire</button>
+                                    <button type="button" class="reason-pill" data-value="I'm interested in an Internship opportunity">🎓 Internship</button>
+                                    <button type="button" class="reason-pill" data-value="I'd like to Collaborate with you">🤝 Collaboration</button>
+                                </div>
+                                <input type="hidden" id="form-reason" name="reason" required>
+                            </div>
+
+                            <!-- Step 3: Email -->
+                            <div class="form-group">
+                                <input type="email" id="form-email" name="email" required placeholder=" " class="form-input" autocomplete="email">
+                                <label for="form-email" class="form-label">Your Email Address</label>
+                            </div>
+
+                            <!-- Step 4: Custom message -->
+                            <div class="form-group">
+                                <textarea id="form-message" name="message" required placeholder=" " rows="4" class="form-input form-textarea"></textarea>
+                                <label for="form-message" class="form-label">Your message...</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                                <span>Send via WhatsApp</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </button>
+
+                            <div class="form-status" id="form-feedback">
+                                <p class="success-msg"><i data-lucide="check-circle"></i> Opening WhatsApp now...</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-text">
+                &copy; 2026 Ashok Kumar. All Rights Reserved. Crafted with care and visual intention.
+            </div>
+            <a href="#" class="back-to-top" id="scroll-to-top" aria-label="Scroll back to top">
+                <span>Top</span>
+                <i data-lucide="arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Case Study Overlay Modal -->
+    <div class="lightbox case-study-lightbox" id="project-lightbox" role="dialog" aria-modal="true" aria-label="Project Case Study Details">
+        <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close case study">
+            <i data-lucide="x"></i>
+        </button>
+        <div class="case-study-container">
+            <!-- Hero Banner -->
+            <div class="case-study-hero">
+                <img src="" alt="Project banner mockup" class="case-study-banner" id="case-study-banner-img">
+                <div class="case-study-hero-overlay">
+                    <div class="case-study-hero-content">
+                        <span class="case-study-tag" id="case-study-category">Category</span>
+                        <h1 class="case-study-title" id="case-study-title">Project Title</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metadata Info Bar -->
+            <div class="case-study-meta-bar">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value" id="case-study-role">Designer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Deliverables</span>
+                    <span class="meta-value" id="case-study-deliverables">Logo, Marketing</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Client</span>
+                    <span class="meta-value" id="case-study-client">Self-Project</span>
+                </div>
+            </div>
+
+            <!-- Detailed Copy Sections -->
+            <div class="case-study-content-grid">
+                <!-- Left: Design Strategy & Thoughts -->
+                <div class="case-study-strategy">
+                    <div class="case-study-section">
+                        <h3 class="case-study-section-title">The Challenge</h3>
+                        <p class="case-study-section-text" id="case-study-challenge">Challenge description goes here.</p>
+                    </div>
+                    <div class="case-study-section">
+                        <h3 class="case-study-section-title">The Thinking & Strategy</h3>
+                        <p class="case-study-section-text" id="case-study-strategy-text">Strategy text goes here.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Visual Identity System Showcase -->
+                <div class="case-study-specifications">
+                    <div class="case-study-section">
+                        <h3 class="case-study-section-title">Color System</h3>
+                        <div class="case-study-palette" id="case-study-palette-container">
+                            <!-- Swatches loaded dynamically via JS -->
+                        </div>
+                    </div>
+                    <div class="case-study-section">
+                        <h3 class="case-study-section-title">Typography System</h3>
+                        <div class="case-study-typography">
+                            <div class="typo-item">
+                                <span class="typo-label">Heading Font</span>
+                                <span class="typo-value" id="case-study-font-heading">Archivo</span>
+                            </div>
+                            <div class="typo-item">
+                                <span class="typo-label">Body Font</span>
+                                <span class="typo-value" id="case-study-font-body">Space Grotesk</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Gallery Showcase -->
+            <div class="case-study-gallery-section">
+                <h3 class="case-study-gallery-title">Visual Showcase</h3>
+                <div class="case-study-gallery-grid" id="case-study-gallery-container">
+                    <!-- Dynamic images loaded via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
