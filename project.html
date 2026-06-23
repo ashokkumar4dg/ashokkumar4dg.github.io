@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            const storedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', storedTheme);
+        })();
+    </script>
+    <meta name="description" content="Case study detail view of design and development projects by Ashok Kumar.">
+    <title>Project Details | Ashok Kumar</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/Logo1.webp">
+    
+    <!-- External Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="preload">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor-dot" id="cursor-dot"></div>
+    <div class="custom-cursor-outline" id="cursor-outline"></div>
+
+    <!-- Breathing Mathematical Grid Overlay -->
+    <div class="breathing-grid" id="project-bg-grid"></div>
+
+    <!-- Floating Navigation Bar -->
+    <header class="navbar" id="main-navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="nav-logo" id="logo-link">
+                <img src="assets/Logo1.webp" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img" loading="eager">
+            </a>
+            
+            <nav class="nav-menu" id="nav-links">
+                <a href="index.html#work" class="nav-link">Work</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="navbar-actions">
+                <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark/light mode">
+                    <!-- Sun Icon for Light Mode -->
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <!-- Moon Icon for Dark Mode -->
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-detail-layout">
+        <!-- Hero Header -->
+        <section class="project-hero-section">
+            <div class="project-hero-container">
+                <div class="back-nav-container">
+                    <a href="index.html#work" class="btn-back"><i data-lucide="arrow-left"></i> Back to Works</a>
+                </div>
+                <div class="project-title-wrap">
+                    <span class="project-detail-category" id="project-category">Category</span>
+                    <h1 class="project-detail-title" id="project-title">Project Title</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metadata Info Bar -->
+        <section class="project-meta-section reveal-element reveal-slide-up">
+            <div class="project-meta-container">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value" id="project-role">Designer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Deliverables</span>
+                    <span class="meta-value" id="project-deliverables">Deliverables details</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Client</span>
+                    <span class="meta-value" id="project-client">Client name</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Context Grid -->
+        <section class="project-context-section">
+            <div class="project-context-container">
+                <!-- Left: Design Strategy & Thoughts -->
+                <div class="project-strategy-column reveal-element reveal-slide-up">
+                    <div class="context-card-block">
+                        <h3 class="context-section-title"><span class="section-indicator-bar"></span> The Challenge</h3>
+                        <p class="context-section-text" id="project-challenge">Challenge description goes here...</p>
+                    </div>
+                    <div class="context-card-block">
+                        <h3 class="context-section-title"><span class="section-indicator-bar"></span> The Thinking & Strategy</h3>
+                        <p class="context-section-text" id="project-strategy-text">Strategy text goes here...</p>
+                    </div>
+                </div>
+
+                <!-- Right: Visual Identity Systems -->
+                <div class="project-specs-column reveal-element reveal-slide-up">
+                    <div class="context-card-block">
+                        <h3 class="context-section-title"><span class="section-indicator-bar"></span> Color System</h3>
+                        <div class="project-palette-grid" id="project-palette-container">
+                            <!-- Swatches loaded dynamically -->
+                        </div>
+                    </div>
+                    <div class="context-card-block">
+                        <h3 class="context-section-title"><span class="section-indicator-bar"></span> Typography System</h3>
+                        <div class="project-typography-box">
+                            <div class="typo-detail-item">
+                                <span class="typo-detail-label">Heading Font</span>
+                                <span class="typo-detail-value" id="project-font-heading">Archivo</span>
+                            </div>
+                            <div class="typo-detail-item">
+                                <span class="typo-detail-label">Body Font</span>
+                                <span class="typo-detail-value" id="project-font-body">Space Grotesk</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Behance-Style Stacked Gallery Section -->
+        <section class="project-gallery-section">
+            <div class="gallery-section-header reveal-element reveal-slide-up">
+                <span class="gallery-section-tag">Visual Showcase</span>
+                <h2 class="gallery-section-title">Design Presentation</h2>
+                <p class="gallery-section-subtitle">A stacked sequence of full-resolution designs, showing the pixel-perfect details and structural elements.</p>
+            </div>
+            
+            <div class="project-gallery-stack" id="project-gallery-container">
+                <!-- Dynamic gallery images loaded here -->
+            </div>
+        </section>
+
+        <!-- Action CTA footer section -->
+        <section class="project-footer-cta">
+            <div class="footer-cta-container reveal-element reveal-scale">
+                <h3>Interested in working together on a similar project?</h3>
+                <p>Let's create something memorable. Reach out to collaborate, hire me, or discuss designs.</p>
+                <div class="footer-cta-links">
+                    <a href="index.html#contact" class="btn btn-primary">Start a Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Projects blurred shelf -->
+        <section class="other-projects-section">
+            <div class="other-projects-container reveal-element reveal-slide-up">
+                <h3 class="other-projects-header-title">View Other Projects</h3>
+                <div class="other-projects-grid" id="other-projects-container">
+                    <!-- Dynamic other projects loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-text">
+                &copy; 2026 Ashok Kumar. All Rights Reserved. Crafted with care and visual intention.
+            </div>
+            <a href="#" class="back-to-top" id="scroll-to-top" aria-label="Scroll back to top">
+                <span>Top</span>
+                <i data-lucide="arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="projects-data.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="project-detail.js" defer></script>
+</body>
+</html>

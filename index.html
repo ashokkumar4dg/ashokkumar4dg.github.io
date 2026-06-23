@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Ashok Kumar, a freelance Brand & UI/UX Designer helping startups and creators build standout visual brands. Explore logos, social media designs, and book covers.">
+    <script>
+        (function() {
+            const storedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', storedTheme);
+        })();
+    </script>
+    <meta name="description"
+        content="Portfolio of Ashok Kumar, a freelance Brand & UI/UX Designer helping startups and creators build standout visual brands. Explore logos, social media designs, and book covers.">
     <title>Ashok Kumar | Freelance Brand & UI/UX Designer</title>
     <meta name="google-site-verification" content="2RJ9X3FS3PfcRNQM2m7daJ_F80_3idiOCVLI0XC3tQg" />
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/Logo1.webp">
-    
-    <!-- Google Fonts -->
+
+    <!-- Google Fonts with preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+
+<body class="preload">
     <!-- Custom Cursor -->
     <div class="custom-cursor-dot" id="cursor-dot"></div>
     <div class="custom-cursor-outline" id="cursor-outline"></div>
+
+    <!-- Breathing Mathematical Grid Overlay -->
+    <div class="breathing-grid" id="homepage-bg-grid"></div>
 
     <!-- Floating Navigation Bar -->
     <header class="navbar" id="main-navbar">
@@ -32,14 +43,14 @@
             <a href="#" class="nav-logo" id="logo-link">
                 <img src="assets/Logo1.webp" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img" loading="eager">
             </a>
-            
+
             <nav class="nav-menu" id="nav-links">
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            
+
             <div class="navbar-actions">
                 <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark/light mode">
                     <!-- Sun Icon for Light Mode -->
@@ -54,7 +65,7 @@
             </div>
         </div>
     </header>
- 
+
     <main>
         <!-- Hero Section -->
         <section class="hero" id="hero-sec">
@@ -71,7 +82,8 @@
                         Ashok <span class="highlight">Kumar</span>
                     </h1>
                     <p class="hero-subtitle animate-in delay-2">
-                        Freelance Brand & UI/UX Designer creating bold, scroll-stopping visuals & digital experiences that connect and convert.
+                        Freelance Brand & UI/UX Designer creating bold, scroll-stopping visuals & digital experiences
+                        that connect and convert.
                     </p>
                     <div class="hero-ctas animate-in delay-3">
                         <a href="#work" class="btn btn-primary" id="hero-primary-cta">Explore Work</a>
@@ -81,13 +93,21 @@
                 <div class="hero-image-wrapper animate-in delay-2">
                     <div class="profile-image-container" id="profile-container">
                         <!-- Dark Theme Images -->
-                        <img src="assets/WhiteShirt_Transparent.webp" alt="Ashok Kumar Profile Photo" class="profile-img real-img dark-theme-img img-skeleton" id="profile-pic-real-dark" loading="eager">
-                        <img src="assets/WhiteTshirt_3D.webp" alt="Ashok Kumar 3D Cartoon" class="profile-img cartoon-img dark-theme-img img-skeleton" id="profile-pic-cartoon-dark" loading="eager">
-                        
+                        <img src="assets/WhiteShirt_Transparent.webp" alt="Ashok Kumar Profile Photo"
+                            class="profile-img real-img dark-theme-img img-skeleton" id="profile-pic-real-dark"
+                            loading="eager">
+                        <img src="assets/WhiteTshirt_3D.webp" alt="Ashok Kumar 3D Cartoon"
+                            class="profile-img cartoon-img dark-theme-img img-skeleton" id="profile-pic-cartoon-dark"
+                            loading="eager">
+
                         <!-- Light Theme Images -->
-                        <img src="assets/BlackShirt.webp" alt="Ashok Kumar Profile Photo" class="profile-img real-img light-theme-img img-skeleton" id="profile-pic-real-light" loading="eager">
-                        <img src="assets/BlackTshirt_3D.webp" alt="Ashok Kumar 3D Cartoon" class="profile-img cartoon-img light-theme-img img-skeleton" id="profile-pic-cartoon-light" loading="eager">
-                        
+                        <img src="assets/BlackShirt.webp" alt="Ashok Kumar Profile Photo"
+                            class="profile-img real-img light-theme-img img-skeleton" id="profile-pic-real-light"
+                            loading="eager">
+                        <img src="assets/BlackTshirt_3D.webp" alt="Ashok Kumar 3D Cartoon"
+                            class="profile-img cartoon-img light-theme-img img-skeleton" id="profile-pic-cartoon-light"
+                            loading="eager">
+
                         <div class="profile-ring"></div>
                     </div>
                 </div>
@@ -101,13 +121,14 @@
         <!-- Work/Portfolio Section -->
         <section class="work" id="work">
             <div class="section-container">
-                <div class="section-header">
+                <div class="section-header reveal-element reveal-slide-up">
                     <h2 class="section-title">Selected Projects</h2>
-                    <p class="section-subtitle">A curated showcase of branding systems, creative social campaigns, print materials, and digital interfaces.</p>
+                    <p class="section-subtitle">A curated showcase of branding systems, creative social campaigns, print
+                        materials, and digital interfaces.</p>
                 </div>
-                
+
                 <!-- Category Filter Tags -->
-                <div class="filter-container">
+                <div class="filter-container reveal-element reveal-slide-up">
                     <button class="filter-btn active" data-filter="all" id="filter-all">All Works</button>
                     <button class="filter-btn" data-filter="brand" id="filter-brand">Branding</button>
                     <button class="filter-btn" data-filter="social" id="filter-social">Social Media</button>
@@ -120,110 +141,70 @@
                 <!-- Projects Grid -->
                 <div class="portfolio-grid" id="projects-grid">
                     <!-- Project 1: Brand Identity -->
-                    <article class="project-card" data-category="brand">
+                    <article class="project-card reveal-element reveal-slide-up" data-category="brand">
                         <div class="project-img-container">
-                            <img src="assets/project-brand.webp" alt="Identity and Branding Systems Mockup" class="project-img img-skeleton" loading="lazy">
-                            <div class="project-overlay">
-                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            <img src="assets/project-brand.png" alt="Identity and Branding Systems Mockup" class="project-img" loading="lazy">
+                            <div class="project-card-text-overlay">
+                                <span class="card-overlay-category">Brand Identity</span>
+                                <h3 class="card-overlay-title">Identity & Branding Systems</h3>
+                                <span class="adding-soon-badge">Adding Soon...</span>
                             </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-tags">
-                                <span class="tag">Brand Identity</span>
-                                <span class="tag">Logo Design</span>
-                            </div>
-                            <h3 class="project-card-title">Identity & Branding Systems</h3>
-                            <p class="project-card-desc">Cohesive brand identities and logo designs reflecting custom business personalities. From initial concept to final market-ready vector files.</p>
                         </div>
                     </article>
 
                     <!-- Project 2: Social Media -->
-                    <article class="project-card" data-category="social">
+                    <article class="project-card reveal-element reveal-slide-up" data-category="social">
                         <div class="project-img-container">
-                            <img src="assets/project-social.webp" alt="Social Media Creative Campaign Mockup" class="project-img img-skeleton" loading="lazy">
-                            <div class="project-overlay">
-                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            <img src="assets/Social Media Posts/Socialmedia1.webp" alt="Social Media Creative Campaign Mockup" class="project-img" loading="lazy">
+                            <div class="project-card-text-overlay">
+                                <span class="card-overlay-category">Social Media</span>
+                                <h3 class="card-overlay-title">Social Media Creative Campaign</h3>
                             </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-tags">
-                                <span class="tag">Social Media</span>
-                                <span class="tag">Marketing Graphics</span>
-                            </div>
-                            <h3 class="project-card-title">Social Media Creative Campaign</h3>
-                            <p class="project-card-desc">Platform-optimized, scroll-stopping visual assets designed to boost engagement, reach, and grid consistency across Instagram and LinkedIn.</p>
                         </div>
                     </article>
 
                     <!-- Project 3: Book Covers -->
-                    <article class="project-card" data-category="book">
+                    <article class="project-card reveal-element reveal-slide-up" data-category="book">
                         <div class="project-img-container">
-                            <img src="assets/project-book.webp" alt="Premium Book Cover Layouts Mockup" class="project-img img-skeleton" loading="lazy">
-                            <div class="project-overlay">
-                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            <img src="assets/Book Cover/mansoonmemoriesFront.webp" alt="Premium Book Cover Layouts Mockup" class="project-img" loading="lazy">
+                            <div class="project-card-text-overlay">
+                                <span class="card-overlay-category">Book Cover</span>
+                                <h3 class="card-overlay-title">Premium Book Cover Layouts</h3>
                             </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-tags">
-                                <span class="tag">Book Cover</span>
-                                <span class="tag">Print Design</span>
-                            </div>
-                            <h3 class="project-card-title">Premium Book Cover Layouts</h3>
-                            <p class="project-card-desc">High-impact book cover designs designed to make readers stop, look, and buy. Spanning fiction, self-help, and non-fiction genres.</p>
                         </div>
                     </article>
 
                     <!-- Project 4: UI/UX & Web -->
-                    <article class="project-card" data-category="web">
+                    <article class="project-card reveal-element reveal-slide-up" data-category="web">
                         <div class="project-img-container">
-                            <img src="assets/project-web.webp" alt="UI/UX and Vibe-Coded Web Designs Mockup" class="project-img img-skeleton" loading="lazy">
-                            <div class="project-overlay">
-                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            <img src="assets/fullscreenshot-manseries.webp" alt="UI/UX and Vibe-Coded Web Designs Mockup" class="project-img" loading="lazy">
+                            <div class="project-card-text-overlay">
+                                <span class="card-overlay-category">UI/UX Design</span>
+                                <h3 class="card-overlay-title">UI/UX & Vibe-Coded Web Designs</h3>
                             </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-tags">
-                                <span class="tag">UI/UX Design</span>
-                                <span class="tag">Vibe Coding</span>
-                            </div>
-                            <h3 class="project-card-title">UI/UX & Vibe-Coded Web Designs</h3>
-                            <p class="project-card-desc">Clean, modern, and user-friendly web interfaces blending trending aesthetics with functional, high-converting responsive layouts.</p>
                         </div>
                     </article>
 
                     <!-- Project 5: Posters -->
-                    <article class="project-card" data-category="poster">
+                    <article class="project-card reveal-element reveal-slide-up" data-category="poster">
                         <div class="project-img-container">
-                            <img src="assets/project-poster.webp" alt="Creative Poster Design Showcase" class="project-img img-skeleton" loading="lazy">
-                            <div class="project-overlay">
-                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            <img src="assets/project-poster.png" alt="Creative Poster Design Showcase" class="project-img" loading="lazy">
+                            <div class="project-card-text-overlay">
+                                <span class="card-overlay-category">Poster Art</span>
+                                <h3 class="card-overlay-title">Creative Poster Design Showcase</h3>
+                                <span class="adding-soon-badge">Adding Soon...</span>
                             </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-tags">
-                                <span class="tag">Poster Art</span>
-                                <span class="tag">Graphic Design</span>
-                            </div>
-                            <h3 class="project-card-title">Creative Poster Design Showcase</h3>
-                            <p class="project-card-desc">A curated compilation of minimalist, geometric, and Swiss-style print poster designs exploring shape, typography, and contrast.</p>
                         </div>
                     </article>
 
                     <!-- Project 6: Invitations -->
-                    <article class="project-card" data-category="invitation">
+                    <article class="project-card reveal-element reveal-slide-up" data-category="invitation">
                         <div class="project-img-container">
-                            <img src="assets/project-invitation.webp" alt="Premium Invitation Layouts" class="project-img img-skeleton" loading="lazy">
-                            <div class="project-overlay">
-                                <span class="view-btn"><i data-lucide="maximize-2"></i> View Project</span>
+                            <img src="assets/Invitation Card/WeddingCard1.webp" alt="Premium Invitation Layouts" class="project-img" loading="lazy">
+                            <div class="project-card-text-overlay">
+                                <span class="card-overlay-category">Print Design</span>
+                                <h3 class="card-overlay-title">Premium Invitation Layouts</h3>
                             </div>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-tags">
-                                <span class="tag">Print Design</span>
-                                <span class="tag">Stationery Layout</span>
-                            </div>
-                            <h3 class="project-card-title">Premium Invitation Layouts</h3>
-                            <p class="project-card-desc">Bespoke, typography-centered invitation design cards exploring luxurious textures, print margins, and visual balance.</p>
                         </div>
                     </article>
                 </div>
@@ -233,41 +214,98 @@
         <!-- About Me Section -->
         <section class="about" id="about">
             <div class="section-container">
-                <div class="section-header">
+                <div class="section-header reveal-element reveal-slide-up">
                     <h2 class="section-title">About My Approach</h2>
-                    <p class="section-subtitle">Bringing typography, color theory, layout, and visual hierarchy together to make brands communicate and convert.</p>
+                    <p class="section-subtitle">Bringing typography, color theory, layout, and visual hierarchy together
+                        to make brands communicate and convert.</p>
                 </div>
 
                 <div class="about-grid">
-                    <div class="about-bio">
+                    <div class="about-bio reveal-element reveal-slide-up">
                         <p class="bio-highlight">
-                            I help startups, content creators, authors, and small brands turn complex ideas into visuals that actually resonate. 
+                            I help startups, content creators, authors, and small brands turn complex ideas into visuals
+                            that actually resonate.
                         </p>
                         <p class="bio-text">
-                            Whether it's a logo that captures a brand's personality, a social media feed that stops the scroll, a book cover that makes readers pick it up, or a clean website interface, I believe visual design should be intentional, scalable, and market-ready—not just pretty. I care about understanding the <strong>'why'</strong> behind a brand before I design the <strong>'what.'</strong>
+                            Whether it's a logo that captures a brand's personality, a social media feed that stops the
+                            scroll, a book cover that makes readers pick it up, or a clean website interface, I believe
+                            visual design should be intentional, scalable, and market-ready—not just pretty. I care
+                            about understanding the <strong>'why'</strong> behind a brand before I design the
+                            <strong>'what.'</strong>
                         </p>
                         <p class="bio-text">
-                            Driven by curiosity, I've spent years learning how design solves real-world business problems. My journey includes hands-on experience designing e-commerce banners and website carousels during my internship at SouqArena.
+                            Driven by curiosity, I've spent years learning how design solves real-world business
+                            problems. My journey includes hands-on experience designing e-commerce banners and website
+                            carousels during my internship at SouqArena.
                         </p>
                     </div>
 
                     <div class="about-skills">
-                        <div class="skills-card">
-                            <h3 class="skills-title"><i data-lucide="wrench" class="skill-header-icon"></i> Technical Toolkit</h3>
+                        <div class="skills-card reveal-element reveal-scale">
+                            <h3 class="skills-title"><i data-lucide="wrench" class="skill-header-icon"></i> Technical
+                                Toolkit</h3>
                             <div class="tech-grid">
-                                <div class="tech-item" title="UI/UX & Prototyping"><span class="tech-dot active"></span> Figma</div>
-                                <div class="tech-item" title="Image Editing & Manipulation"><span class="tech-dot active"></span> Photoshop</div>
-                                <div class="tech-item" title="Vector Layouts & Branding"><span class="tech-dot active"></span> Illustrator</div>
-                                <div class="tech-item" title="Page Layout & Publishing"><span class="tech-dot active"></span> InDesign</div>
-                                <div class="tech-item" title="Video Editing & Effects"><span class="tech-dot active"></span> CapCut</div>
-                                <div class="tech-item" title="Asset & Fast Templates"><span class="tech-dot active"></span> Canva</div>
-                                <div class="tech-item" title="Alternative Design Tools"><span class="tech-dot active"></span> Affinity Suite</div>
-                                <div class="tech-item" title="Generative Assets & Inspiration"><span class="tech-dot active"></span> AI Design Tools</div>
+                                <div class="tech-item" title="UI/UX & Prototyping">
+                                    <span class="tool-icon">
+                                        <svg fill="none" height="2500" width="1667" xmlns="http://www.w3.org/2000/svg" viewBox="1.466 2.199 285.068 427.602"><path d="M1.466 2.2h285.068V429.8H1.466z" stroke-width="3"/><path d="M144 216c0-39.359 31.907-71.267 71.267-71.267 39.359 0 71.267 31.908 71.267 71.267 0 39.36-31.908 71.267-71.267 71.267C175.907 287.267 144 255.36 144 216z" fill="#1abcfe"/><path d="M1.466 358.534c0-39.359 31.907-71.267 71.267-71.267H144v71.267c0 39.36-31.907 71.267-71.267 71.267S1.466 397.894 1.466 358.534z" fill="#0acf83"/><path d="M144 2.2v142.533h71.267c39.36 0 71.267-31.907 71.267-71.267S254.627 2.2 215.267 2.2z" fill="#ff7262"/><path d="M1.466 73.466c0 39.36 31.907 71.267 71.267 71.267H144V2.199H72.733c-39.36 0-71.267 31.908-71.267 71.267z" fill="#f24e1e"/><path d="M1.466 216c0 39.36 31.907 71.267 71.267 71.267H144V144.733H72.733c-39.36 0-71.267 31.908-71.267 71.267z" fill="#a259ff"/></svg>
+                                    </span>
+                                    Figma
+                                </div>
+                                <div class="tech-item" title="Image Editing & Manipulation">
+                                    <span class="tool-icon">
+                                        <svg viewBox="0 0 240 234" xmlns="http://www.w3.org/2000/svg"><path d="M42.5 0h155C221 0 240 19 240 42.5v149c0 23.5-19 42.5-42.5 42.5h-155C19 234 0 215 0 191.5v-149C0 19 19 0 42.5 0z" fill="#001e36"/><g fill="#31a8ff"><path d="M54 164.1V61.2c0-.7.3-1.1 1-1.1 1.7 0 3.3 0 5.6-.1 2.4-.1 4.9-.1 7.6-.2s5.6-.1 8.7-.2 6.1-.1 9.1-.1c8.2 0 15 1 20.6 3.1 5 1.7 9.6 4.5 13.4 8.2 3.2 3.2 5.7 7.1 7.3 11.4 1.5 4.2 2.3 8.5 2.3 13 0 8.6-2 15.7-6 21.3s-9.6 9.8-16.1 12.2c-6.8 2.5-14.3 3.4-22.5 3.4-2.4 0-4 0-5-.1s-2.4-.1-4.3-.1V164c.1.7-.4 1.3-1.1 1.4H55.2c-.8 0-1.2-.4-1.2-1.3zm21.8-84.7V113c1.4.1 2.7.2 3.9.2H85c3.9 0 7.8-.6 11.5-1.8 3.2-.9 6-2.8 8.2-5.3 2.1-2.5 3.1-5.9 3.1-10.3.1-3.1-.7-6.2-2.3-8.9-1.7-2.6-4.1-4.6-7-5.7-3.7-1.5-7.7-2.1-11.8-2-2.6 0-4.9 0-6.8.1-2-.1-3.4 0-4.1.1zM192 106.9c-3-1.6-6.2-2.7-9.6-3.4-3.7-.8-7.4-1.3-11.2-1.3-2-.1-4.1.2-6 .7-1.3.3-2.4 1-3.1 2-.5.8-.8 1.8-.8 2.7s.4 1.8 1 2.6c.9 1.1 2.1 2 3.4 2.7 2.3 1.2 4.7 2.3 7.1 3.3 5.4 1.8 10.6 4.3 15.4 7.3 3.3 2.1 6 4.9 7.9 8.3 1.6 3.2 2.4 6.7 2.3 10.3.1 4.7-1.3 9.4-3.9 13.3-2.8 4-6.7 7.1-11.2 8.9-4.9 2.1-10.9 3.2-18.1 3.2-4.6 0-9.1-.4-13.6-1.3-3.5-.6-7-1.7-10.2-3.2-.7-.4-1.2-1.1-1.1-1.9v-17.4c0-.3.1-.7.4-.9s.6-.1.9.1c3.9 2.3 8 3.9 12.4 4.9 3.8 1 7.8 1.5 11.8 1.5 3.8 0 6.5-.5 8.3-1.4 1.6-.7 2.7-2.4 2.7-4.2 0-1.4-.8-2.7-2.4-4s-4.9-2.8-9.8-4.7c-5.1-1.8-9.8-4.2-14.2-7.2-3.1-2.2-5.7-5.1-7.6-8.5-1.6-3.2-2.4-6.7-2.3-10.2 0-4.3 1.2-8.4 3.4-12.1 2.5-4 6.2-7.2 10.5-9.2 4.7-2.4 10.6-3.5 17.7-3.5 4.1 0 8.3.3 12.4.9 3 .4 5.9 1.2 8.6 2.3.4.1.8.5 1 .9.1.4.2.8.2 1.2v16.3c0 .4-.2.8-.5 1-.9.2-1.4.2-1.8 0z"/></g></svg>
+                                    </span>
+                                    Photoshop
+                                </div>
+                                <div class="tech-item" title="Vector Layouts & Branding">
+                                    <span class="tool-icon">
+                                        <svg viewBox="0 0 240 234" xmlns="http://www.w3.org/2000/svg"><path d="M42.5 0h155C221 0 240 19 240 42.5v149c0 23.5-19 42.5-42.5 42.5h-155C19 234 0 215 0 191.5v-149C0 19 19 0 42.5 0z" fill="#300"/><g fill="#ff9a00"><path d="M116.3 140.4H79.1l-7.6 23.5c-.2.9-1 1.5-1.9 1.4H50.8c-1.1 0-1.4-.6-1.1-1.8l32.2-92.7c.3-1 .6-2.1 1-3.3.4-2.1.6-4.3.6-6.5-.1-.5.3-1 .8-1.1H110.2c.8 0 1.2.3 1.3.8l36.5 103c.3 1.1 0 1.6-1 1.6h-20.9c-.7.1-1.4-.4-1.6-1.1zm-31.4-20.3h25.4c-.6-2.1-1.4-4.6-2.3-7.2-.9-2.7-1.8-5.6-2.7-8.6-1-3.1-1.9-6.1-2.9-9.2s-1.9-6-2.7-8.9c-.8-2.8-1.5-5.4-2.2-7.8h-.2c-.9 4.3-2 8.6-3.4 12.9-1.5 4.8-3 9.8-4.6 14.8-1.4 5.1-2.9 9.8-4.4 14zM169.8 77c-3.3.1-6.5-1.2-8.9-3.5-2.3-2.5-3.5-5.8-3.4-9.2-.1-3.4 1.2-6.6 3.6-8.9s5.6-3.5 8.9-3.5c3.9 0 6.9 1.2 9.1 3.5 2.2 2.4 3.4 5.6 3.3 8.9.1 3.4-1.1 6.7-3.5 9.2-2.3 2.4-5.7 3.7-9.1 3.5zm-11.2 86.8v-77c0-1 .4-1.4 1.3-1.4h19.8c.9 0 1.3.5 1.3 1.4v77c0 1.1-.4 1.6-1.3 1.6h-19.6c-1 0-1.5-.6-1.5-1.6z"/></g></svg>
+                                    </span>
+                                    Illustrator
+                                </div>
+
+                                <div class="tech-item" title="Video Editing & Effects">
+                                    <span class="tool-icon">
+                                        <svg width="16" height="16" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="512" height="512" rx="120" fill="#18181b" />
+                                            <path d="M140.049 181.689a10.082 10.082 0 0 1 9.345-5.55h161.545l.106-.001c5.066 0 9.368 3.72 10.096 8.734.205 2.714.102 5.428 0 8.162l-90.597 44.891c-30.608-15.018-61.03-30.22-91.535-45.339.142-3.632-.633-7.53 1.04-10.897z" fill="#00f0ff"/>
+                                            <path d="M139.009 317.095a24846.007 24846.007 0 0 1 91.351-45.319c30.322 14.773 60.521 29.954 90.802 44.89-.204 3.918.755 8.162-1.305 11.773a10.085 10.085 0 0 1-8.755 5.08h-.082l-161.605.002-.277.002a10.202 10.202 0 0 1-9.007-5.411c-1.796-3.386-.98-7.345-1.122-11.017z" fill="#ff007f"/>
+                                        </svg>
+                                    </span>
+                                    CapCut
+                                </div>
+                                <div class="tech-item" title="Asset & Fast Templates">
+                                    <span class="tool-icon">
+                                        <svg width="2500" height="2500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#a)"><path fill="url(#b)" d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20"/></g><path d="M6.287 5.33a.225.225 0 0 1 .414 0l.263.612c.2.465.571.835 1.036 1.036l.611.263a.225.225 0 0 1 0 .413l-.61.264c-.466.2-.837.57-1.037 1.036l-.263.61a.225.225 0 0 1-.414 0l-.263-.61a1.98 1.98 0 0 0-1.036-1.036l-.611-.264a.225.225 0 0 1 0-.413l.61-.263c.466-.2.837-.571 1.037-1.036l.263-.611Z" fill="#fff"/><path d="M13.118 5.496c2.04 0 3.254 1.027 3.254 2.423 0 1.44-1.041 2.46-1.928 2.46-.22 0-.332-.108-.332-.287 0-.399.642-.998.642-2.13 0-.952-.581-1.55-1.534-1.55-2.04 0-4.361 2.409-4.361 6.575 0 2.46 1.222 4.24 3.194 4.24 1.706 0 3.18-1.224 4.033-2.954.076-.153.148-.223.23-.223.12 0 .235.103.235.327 0 1.01-1.81 4.123-4.938 4.123-2.949 0-4.86-2.21-4.86-5.557 0-.742.09-1.448.254-2.11a6 6 0 0 1 .262-.787c.195-.421.608-1.167 1.061-1.362l.612-.263c.642-.277.8-1.031.475-1.544 1.062-.88 2.351-1.38 3.701-1.38ZM8.724 7.542a.2.2 0 0 1-.084.094zM4.108 9.169a.145.145 0 0 1 .266 0l.17.394c.13.3.369.54.67.669l.393.17a.145.145 0 0 1 0 .267l-.394.17c-.3.129-.54.368-.669.668l-.17.395a.145.145 0 0 1-.266 0l-.17-.395a1.28 1.28 0 0 0-.67-.668l-.394-.17a.145.145 0 0 1 0-.267l.395-.17c.3-.13.54-.369.669-.67z" fill="#fff"/><defs><radialGradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-99.876 15.767 3.818) scale(15.6209 21.2069)"><stop offset=".2" stop-color="#7D2AE8"/><stop offset=".5" stop-color="#5A32FA"/><stop offset=".971" stop-color="#00C4CC"/></radialGradient><filter id="a" x="2" y="2" width="20" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feMorphology radius="1.558" in="SourceAlpha" result="effect1_innerShadow_5153_10825"/><feOffset/><feGaussianBlur stdDeviation="2.336"/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0.92549 0 0 0 0 0.976471 0 0 0 1 0"/><feBlend in2="shape" result="effect1_innerShadow_5153_10825"/></filter></defs></svg>
+                                    </span>
+                                    Canva
+                                </div>
+                                <div class="tech-item" title="Alternative Design Tools">
+                                    <span class="tool-icon">
+                                        <svg clip-rule="evenodd" fill-rule="evenodd" height="2500" stroke-linejoin="round" stroke-miterlimit="2" viewBox="-.246 -1.859 2520.772 2523.167" width="2496" xmlns="http://www.w3.org/2000/svg"><path d="m80.428.176c2435.578 0 2436.223-.166 2437.74 1.413 2.358 2.454 2.348 2514.274 0 2516.53-1.642 1.578-2.25 1.413-2415.694 1.413-97.205 0-102.72 1.776-102.466-7.782.499-18.813.078-2482.586.218-2503.847.064-9.762 5.376-7.727 80.202-7.727z" fill="#a7f076"/><path d="m677.371 587.443c.039-11.278-.265-11.083.077-22.192.242-7.831 14.394-10.13 52.007-21.143 521.918-152.818 1107.302-121.625 1204.844 147.679 130.398 360.021-517.802 475.353-800.011 694.08-201.573 156.23-129.202 328.78 10.498 351.955 353.55 58.652 647.644-609.21 664.052-643.662 2.341-4.916 3.894-5.288 101.421-5.033 11.412.03 8.501 9.748 8.501 55.77 0 895.686.069 895.81-.575 896.934-1.858 3.239-3.12 2.853-326.014 2.853-134.434 0-139.172 1.002-138.12-5.29 16.123-96.464 187.354-376.145 218.529-429.257 92.155-157 151.18-284.97 152.855-295.122 1.432-8.676-36.425-17.871-38.47-17.223-12.886 4.082-168.461 402.082-453.213 631.116-334.362 268.936-761.89 152.476-795.199-185.765-64.695-656.947 1094.021-649.144 1269.198-886.909 103.024-139.833-117.162-230.44-477.101-146.405-386.811 90.308-643.911 300.767-651.808 299.616-1.625-.237-1.478-1.161-1.472-422.003z" fill="#201d1b"/></svg>
+                                    </span>
+                                    Affinity Designer
+                                </div>
+                                <div class="tech-item" title="Generative Assets & Inspiration">
+                                    <span class="tool-icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 21c0-5.5-4.5-10-10-10 5.5 0 10-4.5 10-10 0 5.5 4.5 10 10 10-5.5 0-10 4.5-10 10zM19 12c0-2.8-2.2-5-5-5 2.8 0 5-2.2 5-5 0 2.8 2.2 5 5 5-2.8 0-5 2.2-5 5z" fill="url(#ai-grad)"/>
+                                            <defs>
+                                                <linearGradient id="ai-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0%" stop-color="#a855f7"/>
+                                                    <stop offset="100%" stop-color="#ec4899"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                    AI Design Tools
+                                </div>
                             </div>
                         </div>
 
-                        <div class="skills-card">
-                            <h3 class="skills-title"><i data-lucide="palette" class="skill-header-icon"></i> Design Competencies</h3>
+                        <div class="skills-card reveal-element reveal-scale">
+                            <h3 class="skills-title"><i data-lucide="palette" class="skill-header-icon"></i> Design
+                                Competencies</h3>
                             <ul class="competencies-list">
                                 <li>Brand Identity & Logo Systems</li>
                                 <li>Social Media Creatives & Ads</li>
@@ -278,25 +316,26 @@
                             </ul>
                         </div>
 
-                        <div class="skills-card">
-                            <h3 class="skills-title"><i data-lucide="languages" class="skill-header-icon"></i> Languages</h3>
+                        <div class="skills-card reveal-element reveal-scale">
+                            <h3 class="skills-title"><i data-lucide="languages" class="skill-header-icon"></i> Languages
+                            </h3>
                             <div class="languages-container">
-                                <div class="lang-item">
+                                <div class="lang-item animate-reveal">
                                     <div class="lang-info">
                                         <span>Hindi <span class="lang-detail">(Native / Fluent)</span></span>
-                                        <span>80%</span>
+                                        <span>94%</span>
                                     </div>
                                     <div class="progress-bar-bg">
-                                        <div class="progress-bar" style="width: 80%"></div>
+                                        <div class="progress-bar lang-bar" data-width="94"></div>
                                     </div>
                                 </div>
-                                <div class="lang-item">
+                                <div class="lang-item animate-reveal">
                                     <div class="lang-info">
                                         <span>English <span class="lang-detail">(Professional Working)</span></span>
-                                        <span>35%</span>
+                                        <span>56%</span>
                                     </div>
                                     <div class="progress-bar-bg">
-                                        <div class="progress-bar" style="width: 35%"></div>
+                                        <div class="progress-bar lang-bar" data-width="56"></div>
                                     </div>
                                 </div>
                             </div>
@@ -309,9 +348,10 @@
         <!-- Experience Timeline Section -->
         <section class="experience" id="experience">
             <div class="section-container">
-                <div class="section-header">
+                <div class="section-header reveal-element reveal-slide-up">
                     <h2 class="section-title">Professional Journey</h2>
-                    <p class="section-subtitle">My professional evolution, featuring agency internships, freelance work, and academic foundations.</p>
+                    <p class="section-subtitle">My professional evolution, featuring agency internships, freelance work,
+                        and academic foundations.</p>
                 </div>
 
                 <div class="timeline-container">
@@ -320,7 +360,7 @@
                     </div>
 
                     <!-- Timeline Item 1 -->
-                    <div class="timeline-item animate-reveal">
+                    <div class="timeline-item reveal-element animate-reveal">
                         <div class="timeline-marker" aria-hidden="true">
                             <div class="marker-icon-container" title="Graphic Design Work">
                                 <i data-lucide="palette"></i>
@@ -331,13 +371,15 @@
                             <h3 class="timeline-role">Senior Graphic Designer</h3>
                             <h4 class="timeline-company">Freelance | Self-Employed</h4>
                             <p class="timeline-desc">
-                                Designing bold, scroll-stopping visuals and digital experiences. Helping startups, creators, authors, and brands stand out through intentional and custom visual designs spanning logos, social banners, covers, and high-converting web templates.
+                                Designing bold, scroll-stopping visuals and digital experiences. Helping startups,
+                                creators, authors, and brands stand out through intentional and custom visual designs
+                                spanning logos, social banners, covers, and high-converting web templates.
                             </p>
                         </div>
                     </div>
 
                     <!-- Timeline Item 2 -->
-                    <div class="timeline-item animate-reveal">
+                    <div class="timeline-item reveal-element animate-reveal">
                         <div class="timeline-marker" aria-hidden="true">
                             <div class="marker-icon-container" title="Professional Internship">
                                 <i data-lucide="briefcase"></i>
@@ -348,13 +390,15 @@
                             <h3 class="timeline-role">Project Intern</h3>
                             <h4 class="timeline-company">SouqArena</h4>
                             <p class="timeline-desc">
-                                Accelerated the brand's visual expression and marketing efforts. Designed high-impact e-commerce web homepage banners, product carousels, and landing layouts that optimized user experience and click-through rates.
+                                Accelerated the brand's visual expression and marketing efforts. Designed high-impact
+                                e-commerce web homepage banners, product carousels, and landing layouts that optimized
+                                user experience and click-through rates.
                             </p>
                         </div>
                     </div>
 
                     <!-- Timeline Item 3 (Education) -->
-                    <div class="timeline-item animate-reveal">
+                    <div class="timeline-item reveal-element animate-reveal">
                         <div class="timeline-marker" aria-hidden="true">
                             <div class="marker-icon-container" title="Academic Education">
                                 <i data-lucide="graduation-cap"></i>
@@ -365,7 +409,9 @@
                             <h3 class="timeline-role">Bachelor of Computer Application (BCA)</h3>
                             <h4 class="timeline-company">Jai Narain Vyas University (JNVU), Jodhpur</h4>
                             <p class="timeline-desc">
-                                Acquired a robust foundation in computer science, software applications, administration, and digital workflows. This technical literacy complements my design career, enabling smooth design-to-code execution.
+                                Acquired a robust foundation in computer science, software applications, administration,
+                                and digital workflows. This technical literacy complements my design career, enabling
+                                smooth design-to-code execution.
                             </p>
                         </div>
                     </div>
@@ -376,16 +422,17 @@
         <!-- Contact Section -->
         <section class="contact" id="contact">
             <div class="section-container">
-                <div class="section-header">
+                <div class="section-header reveal-element reveal-slide-up">
                     <span class="contact-tag">Get in Touch</span>
                     <h2 class="section-title">Let's craft something memorable.</h2>
-                    <p class="section-subtitle">Whether you're starting a new brand, launching a product, publishing a book, or looking to collaborate—let's make it stand out.</p>
+                    <p class="section-subtitle">Whether you're starting a new brand, launching a product, publishing a
+                        book, or looking to collaborate—let's make it stand out.</p>
                 </div>
-                
+
                 <div class="contact-layout">
-                    <div class="contact-info">
-                                             <div class="contact-details">
-                             <a href="mailto:ashokkumar4dg@gmail.com" class="contact-detail-item" id="email-contact">
+                    <div class="contact-info reveal-element reveal-slide-up">
+                        <div class="contact-details">
+                            <a href="mailto:ashokkumar4dg@gmail.com" class="contact-detail-item" id="email-contact">
                                 <div class="contact-icon-box">
                                     <i data-lucide="mail"></i>
                                 </div>
@@ -395,7 +442,8 @@
                                 </div>
                             </a>
 
-                            <a href="https://wa.me/918696289847" target="_blank" rel="noopener noreferrer" class="contact-detail-item" id="whatsapp-contact">
+                            <a href="https://wa.me/918696289847" target="_blank" rel="noopener noreferrer"
+                                class="contact-detail-item" id="whatsapp-contact">
                                 <div class="contact-icon-box">
                                     <i data-lucide="message-circle"></i>
                                 </div>
@@ -417,44 +465,60 @@
                         </div>
 
                         <div class="social-links-grid">
-                            <a href="https://www.behance.net/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Behance" aria-label="Behance Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <a href="https://www.behance.net/ashokkumar4dg" target="_blank" rel="noopener noreferrer"
+                                class="social-link-btn" title="Behance" aria-label="Behance Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <path d="M3 5h5a3.5 3.5 0 0 1 0 7H3zm0 7h6a3.5 3.5 0 0 1 0 7H3z" />
                                     <path d="M13 14h7" />
                                     <path d="M20 12a3 3 0 0 0-6 0v2a3 3 0 0 0 6 0" />
                                     <path d="M14 8h5" />
                                 </svg> Behance
                             </a>
-                            <a href="https://www.linkedin.com/in/ashokkumar4dg/" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="LinkedIn" aria-label="LinkedIn Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <a href="https://www.linkedin.com/in/ashokkumar4dg/" target="_blank"
+                                rel="noopener noreferrer" class="social-link-btn" title="LinkedIn"
+                                aria-label="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                                     <rect width="4" height="12" x="2" y="9" />
                                     <circle cx="4" cy="4" r="2" />
                                 </svg> LinkedIn
                             </a>
-                            <a href="https://instagram.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Instagram" aria-label="Instagram Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <a href="https://instagram.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer"
+                                class="social-link-btn" title="Instagram" aria-label="Instagram Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
                                     <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                                 </svg> Instagram
                             </a>
-                            <a href="https://twitter.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="Twitter" aria-label="Twitter Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                            <a href="https://twitter.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer"
+                                class="social-link-btn" title="Twitter" aria-label="Twitter Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                                 </svg> Twitter
                             </a>
                         </div>
                     </div>
 
-                    <div class="contact-form-container">
+                    <div class="contact-form-container reveal-element reveal-scale">
                         <form class="contact-form" id="portfolio-contact-form" action="#" method="POST">
                             <h3 class="form-title">Send a Message</h3>
                             <p class="form-subtitle">Fills straight to my WhatsApp — no middleman.</p>
 
                             <!-- Step 1: Name -->
                             <div class="form-group">
-                                <input type="text" id="form-name" name="name" required placeholder=" " class="form-input" autocomplete="name">
+                                <input type="text" id="form-name" name="name" required placeholder=" "
+                                    class="form-input" autocomplete="name">
                                 <label for="form-name" class="form-label">Your Name</label>
                             </div>
 
@@ -462,29 +526,40 @@
                             <div class="form-group">
                                 <p class="form-pill-label">Why are you reaching out?</p>
                                 <div class="form-pills" id="reason-pills" role="group" aria-label="Reason for contact">
-                                    <button type="button" class="reason-pill" data-value="I want to hire you for a Freelance Project">🎨 Freelance Project</button>
-                                    <button type="button" class="reason-pill" data-value="I want to hire you Full-time">💼 Full-time Hire</button>
-                                    <button type="button" class="reason-pill" data-value="I'm interested in an Internship opportunity">🎓 Internship</button>
-                                    <button type="button" class="reason-pill" data-value="I'd like to Collaborate with you">🤝 Collaboration</button>
+                                    <button type="button" class="reason-pill"
+                                        data-value="I want to hire you for a Freelance Project">🎨 Freelance
+                                        Project</button>
+                                    <button type="button" class="reason-pill"
+                                        data-value="I want to hire you Full-time">💼 Full-time Hire</button>
+                                    <button type="button" class="reason-pill"
+                                        data-value="I'm interested in an Internship opportunity">🎓 Internship</button>
+                                    <button type="button" class="reason-pill"
+                                        data-value="I'd like to Collaborate with you">🤝 Collaboration</button>
                                 </div>
                                 <input type="hidden" id="form-reason" name="reason" required>
                             </div>
 
                             <!-- Step 3: Email -->
                             <div class="form-group">
-                                <input type="email" id="form-email" name="email" required placeholder=" " class="form-input" autocomplete="email">
+                                <input type="email" id="form-email" name="email" required placeholder=" "
+                                    class="form-input" autocomplete="email">
                                 <label for="form-email" class="form-label">Your Email Address</label>
                             </div>
 
                             <!-- Step 4: Custom message -->
                             <div class="form-group">
-                                <textarea id="form-message" name="message" required placeholder=" " rows="4" class="form-input form-textarea"></textarea>
+                                <textarea id="form-message" name="message" required placeholder=" " rows="4"
+                                    class="form-input form-textarea"></textarea>
                                 <label for="form-message" class="form-label">Your message...</label>
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
                                 <span>Send via WhatsApp</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="currentColor" style="flex-shrink:0">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
                             </button>
 
                             <div class="form-status" id="form-feedback">
@@ -510,88 +585,10 @@
         </div>
     </footer>
 
-    <!-- Case Study Overlay Modal -->
-    <div class="lightbox case-study-lightbox" id="project-lightbox" role="dialog" aria-modal="true" aria-label="Project Case Study Details">
-        <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close case study">
-            <i data-lucide="x"></i>
-        </button>
-        <div class="case-study-container">
-            <!-- Hero Banner -->
-            <div class="case-study-hero">
-                <img src="" alt="Project banner mockup" class="case-study-banner" id="case-study-banner-img">
-                <div class="case-study-hero-overlay">
-                    <div class="case-study-hero-content">
-                        <span class="case-study-tag" id="case-study-category">Category</span>
-                        <h1 class="case-study-title" id="case-study-title">Project Title</h1>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Metadata Info Bar -->
-            <div class="case-study-meta-bar">
-                <div class="meta-item">
-                    <span class="meta-label">Role</span>
-                    <span class="meta-value" id="case-study-role">Designer</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Deliverables</span>
-                    <span class="meta-value" id="case-study-deliverables">Logo, Marketing</span>
-                </div>
-                <div class="meta-item">
-                    <span class="meta-label">Client</span>
-                    <span class="meta-value" id="case-study-client">Self-Project</span>
-                </div>
-            </div>
-
-            <!-- Detailed Copy Sections -->
-            <div class="case-study-content-grid">
-                <!-- Left: Design Strategy & Thoughts -->
-                <div class="case-study-strategy">
-                    <div class="case-study-section">
-                        <h3 class="case-study-section-title">The Challenge</h3>
-                        <p class="case-study-section-text" id="case-study-challenge">Challenge description goes here.</p>
-                    </div>
-                    <div class="case-study-section">
-                        <h3 class="case-study-section-title">The Thinking & Strategy</h3>
-                        <p class="case-study-section-text" id="case-study-strategy-text">Strategy text goes here.</p>
-                    </div>
-                </div>
-
-                <!-- Right: Visual Identity System Showcase -->
-                <div class="case-study-specifications">
-                    <div class="case-study-section">
-                        <h3 class="case-study-section-title">Color System</h3>
-                        <div class="case-study-palette" id="case-study-palette-container">
-                            <!-- Swatches loaded dynamically via JS -->
-                        </div>
-                    </div>
-                    <div class="case-study-section">
-                        <h3 class="case-study-section-title">Typography System</h3>
-                        <div class="case-study-typography">
-                            <div class="typo-item">
-                                <span class="typo-label">Heading Font</span>
-                                <span class="typo-value" id="case-study-font-heading">Archivo</span>
-                            </div>
-                            <div class="typo-item">
-                                <span class="typo-label">Body Font</span>
-                                <span class="typo-value" id="case-study-font-body">Space Grotesk</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Gallery Showcase -->
-            <div class="case-study-gallery-section">
-                <h3 class="case-study-gallery-title">Visual Showcase</h3>
-                <div class="case-study-gallery-grid" id="case-study-gallery-container">
-                    <!-- Dynamic images loaded via JS -->
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- JS Scripts -->
-    <script src="script.js"></script>
+    <script src="projects-data.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>
