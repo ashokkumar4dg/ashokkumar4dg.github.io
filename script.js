@@ -439,7 +439,7 @@ function initPortfolio() {
         }
 
         const waText = `${name}\n${reason}\n${email}\n\n${message}`;
-        const waUrl = `https://wa.me/918696289847?text=${encodeURIComponent(waText)}`;
+        const waUrl = `https://wa.me/ashokkumar4dg?text=${encodeURIComponent(waText)}`;
 
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.7';
