@@ -102,7 +102,7 @@ const PROJECTS_DATA = {
             'assets/fullscreenshot-lucky.webp'
         ],
         galleryLinks: [
-            'https://manseries.vercel.app/',
+            'https://manseries.in/',
             'https://pragya-classes.vercel.app/',
             'https://pixels-computers.vercel.app/',
             'https://lucky-laboratory.vercel.app/'
