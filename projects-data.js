@@ -11,9 +11,9 @@ const PROJECTS_DATA = {
         palette: ['#09090b', '#fafafa', '#a1a1aa', '#27272a'],
         fontHeading: 'Archivo',
         fontBody: 'Space Grotesk',
-        banner: 'assets/project-brand.png',
+        banner: 'assets/project-brand.webp',
         gallery: [
-            'assets/project-brand.png'
+            'assets/project-brand.webp'
         ]
     },
     'social': {
@@ -131,7 +131,7 @@ const PROJECTS_DATA = {
         palette: ['#000000', '#ffffff', '#f4f4f5', '#a1a1aa'],
         fontHeading: 'Archivo',
         fontBody: 'Space Grotesk',
-        banner: 'assets/project-poster.png',
+        banner: 'assets/project-poster.webp',
         isMasterDetail: true,
         items: [
             {
@@ -143,7 +143,7 @@ const PROJECTS_DATA = {
                 publisher: 'Creative Exhibition',
                 year: '2025',
                 gallery: [
-                    'assets/project-poster.png'
+                    'assets/project-poster.webp'
                 ]
             },
             {
