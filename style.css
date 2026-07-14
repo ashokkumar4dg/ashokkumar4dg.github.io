@@ -708,6 +708,19 @@ html[data-theme="light"] .moon-icon {
     margin-bottom: 1.5rem;
 }
 
+.username-tag {
+    font-size: 0.55em;
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.75rem;
+    font-family: var(--font-body);
+    letter-spacing: -0.03em;
+    opacity: 0.8;
+}
+
+
 .hero-subtitle {
     font-size: 1.3rem;
     color: var(--text-secondary);
