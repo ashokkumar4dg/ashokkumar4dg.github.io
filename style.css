@@ -709,15 +709,24 @@ html[data-theme="light"] .moon-icon {
 }
 
 .username-tag {
-    font-size: 0.55em;
+    font-size: 0.35em;
     font-weight: 500;
     color: var(--text-secondary);
     display: inline-block;
     vertical-align: middle;
-    margin-left: 0.75rem;
+    margin-left: 0.6rem;
     font-family: var(--font-body);
-    letter-spacing: -0.03em;
-    opacity: 0.8;
+    letter-spacing: -0.02em;
+    opacity: 0.55;
+}
+
+@media (max-width: 768px) {
+    .username-tag {
+        display: block;
+        margin-left: 0;
+        margin-top: 0.25rem;
+        font-size: 0.4em;
+    }
 }
 
 
@@ -2836,14 +2845,14 @@ html[data-theme="light"] .case-study-hero-overlay {
 
 /* Homepage Blurred Card styling */
 .project-img-container .project-img {
-    filter: blur(8px) brightness(0.55);
-    transform: scale(1.08);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: none;
+    transform: scale(1.01);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
 }
 
-.project-card:hover .project-img {
-    transform: scale(1.13);
-    filter: blur(3px) brightness(0.65);
+.project-card:active .project-img {
+    transform: scale(1.05);
 }
 
 .project-card-text-overlay {
@@ -2859,12 +2868,34 @@ html[data-theme="light"] .case-study-hero-overlay {
     justify-content: center;
     text-align: center;
     padding: 2rem;
-    background: rgba(9, 9, 11, 0.2);
-    transition: background 0.4s ease;
+    background: linear-gradient(to bottom, rgba(9, 9, 11, 0.45) 0%, rgba(9, 9, 11, 0.75) 100%);
+    transition: background-color 0.4s ease;
 }
 
-.project-card:hover .project-card-text-overlay {
-    background: rgba(9, 9, 11, 0.35);
+.project-card:active .project-card-text-overlay {
+    background: linear-gradient(to bottom, rgba(9, 9, 11, 0.55) 0%, rgba(9, 9, 11, 0.85) 100%);
+}
+
+@media (hover: hover) and (min-width: 1025px) {
+    .project-img-container .project-img {
+        filter: blur(8px) brightness(0.55);
+        transform: scale(1.08);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, filter;
+    }
+
+    .project-card:hover .project-img {
+        transform: scale(1.13);
+        filter: blur(3px) brightness(0.65);
+    }
+
+    .project-card-text-overlay {
+        background: rgba(9, 9, 11, 0.2);
+    }
+
+    .project-card:hover .project-card-text-overlay {
+        background: rgba(9, 9, 11, 0.35);
+    }
 }
 
 .card-overlay-category {
@@ -2997,14 +3028,14 @@ html[data-theme="light"] .case-study-hero-overlay {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(8px) brightness(0.55);
-    transform: scale(1.08);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: none;
+    transform: scale(1.01);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
 }
 
-.other-project-card:hover .other-project-blurred-img {
-    transform: scale(1.13);
-    filter: blur(3px) brightness(0.65);
+.other-project-card:active .other-project-blurred-img {
+    transform: scale(1.05);
 }
 
 .other-project-text-overlay {
@@ -3020,12 +3051,34 @@ html[data-theme="light"] .case-study-hero-overlay {
     justify-content: center;
     text-align: center;
     padding: 1.5rem;
-    background: rgba(9, 9, 11, 0.2);
-    transition: background 0.4s ease;
+    background: linear-gradient(to bottom, rgba(9, 9, 11, 0.45) 0%, rgba(9, 9, 11, 0.75) 100%);
+    transition: background-color 0.4s ease;
 }
 
-.other-project-card:hover .other-project-text-overlay {
-    background: rgba(9, 9, 11, 0.35);
+.other-project-card:active .other-project-text-overlay {
+    background: linear-gradient(to bottom, rgba(9, 9, 11, 0.55) 0%, rgba(9, 9, 11, 0.85) 100%);
+}
+
+@media (hover: hover) and (min-width: 1025px) {
+    .other-project-blurred-img {
+        filter: blur(8px) brightness(0.55);
+        transform: scale(1.08);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, filter;
+    }
+
+    .other-project-card:hover .other-project-blurred-img {
+        transform: scale(1.13);
+        filter: blur(3px) brightness(0.65);
+    }
+
+    .other-project-text-overlay {
+        background: rgba(9, 9, 11, 0.2);
+    }
+
+    .other-project-card:hover .other-project-text-overlay {
+        background: rgba(9, 9, 11, 0.35);
+    }
 }
 
 .other-project-category {
