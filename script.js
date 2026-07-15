@@ -309,15 +309,39 @@ function initPortfolio() {
     const timelineProgressBar = document.querySelector('.timeline-progress-bar');
     const timelineItems = document.querySelectorAll('.timeline-item');
 
-    // Pre-calculate section offsets (avoids offsetTop in scroll handler → no reflow)
+    // Pre-calculate section offsets and timeline offsets (avoids offsetTop / boundingClientRect in scroll handler → no reflow)
     let sectionOffsets = [];
+    let timelineTop = 0;
+    let timelineHeight = 0;
+
     const cacheSectionOffsets = () => {
         sectionOffsets = Array.from(sections).map(s => ({
             id: s.getAttribute('id'),
             top: s.getBoundingClientRect().top + window.scrollY
         }));
+        if (timelineContainer) {
+            const rect = timelineContainer.getBoundingClientRect();
+            timelineTop = rect.top + window.scrollY;
+            timelineHeight = rect.height;
+        }
     };
     cacheSectionOffsets();
+
+    // IntersectionObserver for timeline items to animate them when they enter view
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                // If it scrolls out of view below the viewport, reset it
+                if (entry.boundingClientRect.top > 0) {
+                    entry.target.classList.remove('in-view');
+                }
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+
+    timelineItems.forEach(item => timelineObserver.observe(item));
 
     // Cache mobile check — don't re-evaluate matchMedia on every scroll
     let isMobileView = window.matchMedia('(max-width: 768px)').matches ||
@@ -325,7 +349,6 @@ function initPortfolio() {
 
     let lastScrollY = window.scrollY;
     let scrollRafId = null;
-    let isScrollPending = false;
 
     const onScrollFrame = () => {
         scrollRafId = null;
@@ -340,10 +363,12 @@ function initPortfolio() {
             navbar.style.boxShadow = 'none';
             navbar.style.borderBottomColor = 'var(--border)';
         }
+        
+        const defaultNavbarTop = isMobileView ? '0.75rem' : '1rem';
         if (scrollY > lastScrollY && scrollY > 150) {
             navbar.style.top = '-100px';
         } else {
-            navbar.style.top = '1rem';
+            navbar.style.top = defaultNavbarTop;
         }
         lastScrollY = scrollY;
 
@@ -360,24 +385,28 @@ function initPortfolio() {
             link.classList.toggle('active', active);
         });
 
-        // --- 3. Timeline progress bar ---
+        // --- 3. Timeline progress bar (uses cached timeline offsets — no reflow) ---
         if (timelineContainer && timelineProgressBar) {
-            const rect = timelineContainer.getBoundingClientRect();
+            const relativeTop = timelineTop - scrollY;
             const triggerStart = viewportHeight * 0.6;
             let progress = 0;
-            if (rect.top < triggerStart) {
-                progress = (triggerStart - rect.top) / (rect.height - viewportHeight * 0.1);
+            if (relativeTop < triggerStart) {
+                progress = (triggerStart - relativeTop) / (timelineHeight - viewportHeight * 0.1);
                 progress = Math.min(Math.max(progress, 0), 1);
             }
             timelineProgressBar.style.height = `${progress * 100}%`;
-            timelineItems.forEach(item => {
-                item.classList.toggle('in-view', item.getBoundingClientRect().top < viewportHeight * 0.65);
-            });
         }
 
-        // --- 4. Mobile cartoon morph ---
-        if (profileContainer && isMobileView) {
-            profileContainer.classList.toggle('mobile-cartoon', scrollY > 30);
+        // --- 4. Mobile cartoon morph (scroll-linked CSS variable morph) ---
+        if (profileContainer) {
+            if (isMobileView) {
+                const progress = Math.min(Math.max(scrollY / 150, 0), 1);
+                profileContainer.style.setProperty('--morph-progress', progress);
+                profileContainer.classList.toggle('mobile-cartoon', scrollY > 30);
+            } else {
+                profileContainer.style.removeProperty('--morph-progress');
+                profileContainer.classList.remove('mobile-cartoon');
+            }
         }
     };
 
