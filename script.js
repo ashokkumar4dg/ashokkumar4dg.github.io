@@ -281,17 +281,9 @@ function initPortfolio() {
                     const targetWidth = langBar.getAttribute('data-width');
                     setTimeout(() => { langBar.style.width = targetWidth + '%'; }, 100);
                 }
-            } else {
-                // If it scrolls out of view below the viewport, reset it
-                // This enables it to re-reveal when scrolling back down!
-                if (entry.boundingClientRect.top > 0) {
-                    entry.target.classList.remove('active');
-                    
-                    const langBar = entry.target.querySelector('.lang-bar');
-                    if (langBar) {
-                        langBar.style.width = '0%';
-                    }
-                }
+                
+                // Stop observing after the element has been revealed
+                revealObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
@@ -332,11 +324,8 @@ function initPortfolio() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
-            } else {
-                // If it scrolls out of view below the viewport, reset it
-                if (entry.boundingClientRect.top > 0) {
-                    entry.target.classList.remove('in-view');
-                }
+                // Stop observing after the timeline item has animated in
+                timelineObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
