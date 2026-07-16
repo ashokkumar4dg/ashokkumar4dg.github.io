@@ -2382,13 +2382,15 @@ html[data-theme="light"] .case-study-hero-overlay {
     }
 
     /* Active morphed state when scrolled down */
-    .profile-image-container.mobile-cartoon .real-img {
+    html[data-theme="dark"] .profile-image-container.mobile-cartoon .dark-theme-img.real-img,
+    html[data-theme="light"] .profile-image-container.mobile-cartoon .light-theme-img.real-img {
         opacity: 0;
         transform: scale(1.04) translateY(-6px);
         pointer-events: none;
     }
     
-    .profile-image-container.mobile-cartoon .cartoon-img {
+    html[data-theme="dark"] .profile-image-container.mobile-cartoon .dark-theme-img.cartoon-img,
+    html[data-theme="light"] .profile-image-container.mobile-cartoon .light-theme-img.cartoon-img {
         opacity: 1;
         transform: scale(1.04) translateY(-6px);
         pointer-events: auto;
