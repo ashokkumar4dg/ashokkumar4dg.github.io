@@ -796,15 +796,15 @@ html[data-theme="light"] .profile-image-container::before {
     will-change: opacity, transform;
 }
 
-/* Hide opposite theme images gracefully without !important, relying on CSS specificity */
+/* Hide opposite theme images strictly to prevent any cross-theme leaking */
 html[data-theme="dark"] .light-theme-img {
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 html[data-theme="light"] .dark-theme-img {
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 /* Dark Theme Image Behaviors */
