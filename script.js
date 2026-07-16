@@ -386,14 +386,11 @@ function initPortfolio() {
             timelineProgressBar.style.height = `${progress * 100}%`;
         }
 
-        // --- 4. Mobile cartoon morph (scroll-linked CSS variable morph) ---
+        // --- 4. Mobile cartoon morph (scroll-triggered CSS class toggle) ---
         if (profileContainer) {
             if (isMobileView) {
-                const progress = Math.min(Math.max(scrollY / 150, 0), 1);
-                profileContainer.style.setProperty('--morph-progress', progress);
-                profileContainer.classList.toggle('mobile-cartoon', scrollY > 30);
+                profileContainer.classList.toggle('mobile-cartoon', scrollY > 50);
             } else {
-                profileContainer.style.removeProperty('--morph-progress');
                 profileContainer.classList.remove('mobile-cartoon');
             }
         }
