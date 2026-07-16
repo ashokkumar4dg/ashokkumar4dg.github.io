@@ -2360,25 +2360,46 @@ html[data-theme="light"] .case-study-hero-overlay {
         height: 340px; /* Larger on mobile for impact */
     }
     
-    /* Mobile smooth scroll-linked morph transition styles */
+    /* Mobile smooth morph transition styles */
     .profile-image-container .profile-img {
-        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-                    opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-                    filter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     html[data-theme="dark"] .profile-image-container .dark-theme-img.real-img,
     html[data-theme="light"] .profile-image-container .light-theme-img.real-img {
-        opacity: calc(1 - var(--morph-progress, 0) * 0.85); /* Fades to 0.15 to avoid transparent gap */
-        transform: scale(calc(1 + var(--morph-progress, 0) * 0.04)) translateY(calc(var(--morph-progress, 0) * -6px));
+        opacity: 1;
+        transform: scale(1) translateY(0);
         pointer-events: auto;
     }
     
     html[data-theme="dark"] .profile-image-container .dark-theme-img.cartoon-img,
     html[data-theme="light"] .profile-image-container .light-theme-img.cartoon-img {
-        opacity: var(--morph-progress, 0);
-        transform: scale(calc(1 + var(--morph-progress, 0) * 0.04)) translateY(calc(var(--morph-progress, 0) * -6px));
+        opacity: 0;
+        transform: scale(1) translateY(0);
         pointer-events: none;
+    }
+
+    /* Active morphed state when scrolled down */
+    .profile-image-container.mobile-cartoon .real-img {
+        opacity: 0;
+        transform: scale(1.04) translateY(-6px);
+        pointer-events: none;
+    }
+    
+    .profile-image-container.mobile-cartoon .cartoon-img {
+        opacity: 1;
+        transform: scale(1.04) translateY(-6px);
+        pointer-events: auto;
+    }
+
+    html[data-theme="dark"] .profile-image-container.mobile-cartoon .dark-theme-img.cartoon-img {
+        filter: grayscale(0%) saturate(0.5) brightness(0.95) contrast(1.05);
+    }
+
+    html[data-theme="light"] .profile-image-container.mobile-cartoon .light-theme-img.cartoon-img {
+        filter: grayscale(0%) saturate(0.55) brightness(1.0);
     }
     
     /* Portfolio */
