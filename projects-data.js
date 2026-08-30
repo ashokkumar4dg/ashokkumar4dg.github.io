@@ -84,17 +84,19 @@ const PROJECTS_DATA = {
         ]
     },
     'web': {
-        category: 'UI/UX Design',
-        title: 'UI/UX & Vibe-Coded Web Designs',
-        role: 'UI/UX & Frontend Designer',
-        client: 'Vercel Deployments / Client Projects',
-        deliverables: 'Wireframes, Hi-Fi Mockups, Responsive UI Layouts, Interactive Web Prototypes',
-        challenge: 'Portfolios and commercial landing pages often fail to convert visitors due to boring, static grids, slow performance, or overly complicated navigation blocks. The challenge was to create interactive, lightweight, yet highly visual web portals.',
-        strategy: 'I designed a series of high-converting web interfaces utilizing responsive editorial grids, glassmorphism, custom light mode / dark mode controls, and quick action WhatsApp triggers. The projects feature customized student dashboards (Pragya Classes, Pixels Computers), e-commerce skin product flows (Man Series), and clinical diagnostic testing portals (Lucky Laboratory).',
+        category: 'UI/UX & Shopify Design',
+        title: 'Man Series — Live Shopify Store',
+        role: 'Lead UI/UX & Shopify Designer',
+        client: 'Man Series (D2C Skincare Brand)',
+        deliverables: 'Live Shopify Store, UI/UX Wireframes, Custom Responsive Layouts, Conversion Optimization',
+        challenge: 'Man Series required an ingredient-led, high-converting digital presence that communicates premium skincare science while delivering a seamless mobile-first shopping experience and fast checkout flows on Shopify.',
+        strategy: 'Designed and built the live e-commerce experience for Man Series, a D2C skincare brand, deployed on Shopify. Implemented responsive editorial product sections, streamlined collection navigations, custom ingredient breakdown blocks, and conversion-focused CTAs.',
         palette: ['#000000', '#ffffff', '#22c55e', '#18181b'],
         fontHeading: 'Space Grotesk',
         fontBody: 'Space Grotesk',
         banner: 'assets/fullscreenshot-manseries.webp',
+        isLiveEmbed: true,
+        liveUrl: 'https://manseries.in/',
         gallery: [
             'assets/fullscreenshot-manseries.webp',
             'assets/fullscreenshot-pragyaclasses.webp',
@@ -108,7 +110,7 @@ const PROJECTS_DATA = {
             'https://lucky-laboratory.vercel.app/'
         ],
         galleryTitles: [
-            'Man Series',
+            'Man Series (Live Store)',
             'Pragya Classes',
             'Pixels Computers',
             'Lucky Laboratory'

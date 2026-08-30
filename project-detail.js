@@ -284,6 +284,7 @@ function initProjectDetails() {
         const initialImg = scrollImages[0];
         const initialLink = project.galleryLinks[0];
         const initialDisplayLink = initialLink.replace('https://', '');
+        const isFirstLive = project.isLiveEmbed || initialLink.includes('manseries.in');
         
         const browserFrameHtml = `
             <div class="browser-frame-container">
@@ -296,20 +297,33 @@ function initProjectDetails() {
                     <div class="browser-frame-address">
                         <i data-lucide="lock" class="address-lock-icon"></i>
                         <span id="browser-address-text">${initialDisplayLink}</span>
+                        ${isFirstLive ? '<span class="live-address-badge" id="browser-live-tag"><span class="live-dot-pulse"></span> LIVE</span>' : ''}
                     </div>
                     <div class="browser-frame-spacer"></div>
                 </div>
-                <div class="browser-frame-viewport">
-                    <div class="browser-scroll-helper-badge">
-                        <i data-lucide="mouse-pointer"></i> Hover to scroll page layout
+                <div class="browser-frame-viewport" id="browser-viewport-container">
+                    <!-- Live Store Iframe -->
+                    ${isFirstLive ? `
+                    <iframe src="${initialLink}" id="browser-live-iframe" class="browser-frame-iframe" title="${project.title}" loading="eager" sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"></iframe>
+                    <div class="browser-iframe-loader" id="browser-iframe-loader">
+                        <div class="browser-loader-spinner"></div>
+                        <span>Connecting to live store...</span>
                     </div>
-                    <img src="${initialImg}" alt="Website Preview" class="browser-frame-img" id="browser-viewport-img">
+                    ` : ''}
+                    
+                    <!-- Fallback / Static Screenshot View -->
+                    <div class="browser-fallback-view" id="browser-fallback-view" style="${isFirstLive ? 'display: none;' : 'display: block;'}">
+                        <div class="browser-scroll-helper-badge">
+                            <i data-lucide="mouse-pointer"></i> Hover to scroll page layout
+                        </div>
+                        <img src="${initialImg}" alt="${project.galleryTitles ? project.galleryTitles[0] + ' Shopify and Web UI UX Design by Ashok Kumar' : project.title + ' Design by Ashok Kumar'}" class="browser-frame-img" id="browser-viewport-img">
+                    </div>
                 </div>
             </div>
             
             <div class="browser-action-row">
                 <a href="${initialLink}" target="_blank" rel="noopener noreferrer" class="btn btn-visit-site" id="browser-visit-link">
-                    <span>Visit Live Website</span>
+                    <span id="browser-visit-btn-text">Visit Live Site &rarr;</span>
                     <i data-lucide="external-link"></i>
                 </a>
             </div>
@@ -318,11 +332,80 @@ function initProjectDetails() {
         showcaseWrapper.innerHTML = tabsHtml + browserFrameHtml;
         galleryContainer.appendChild(showcaseWrapper);
         
+        // Helper: verify & manage live iframe loading with graceful fallback
+        let liveIframeTimer = null;
+        const checkLiveIframe = () => {
+            const iframe = document.getElementById('browser-live-iframe');
+            const fallbackView = document.getElementById('browser-fallback-view');
+            const loader = document.getElementById('browser-iframe-loader');
+            
+            if (!iframe || !fallbackView) return;
+            
+            let loaded = false;
+            
+            const activateFallback = () => {
+                if (loaded) return;
+                loaded = true;
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
+                }
+                iframe.style.display = 'none';
+                fallbackView.style.display = 'block';
+                fallbackView.style.opacity = '1';
+            };
+            
+            const activateIframe = () => {
+                if (loaded) return;
+                try {
+                    // Check if browser blocked iframe content
+                    if (iframe.contentDocument && iframe.contentDocument.body && iframe.contentDocument.body.children.length === 0) {
+                        activateFallback();
+                        return;
+                    }
+                } catch (e) {
+                    // Cross-origin restriction is standard for Shopify live domains
+                }
+                loaded = true;
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
+                }
+                iframe.style.display = 'block';
+                fallbackView.style.display = 'none';
+            };
+            
+            iframe.onload = () => {
+                setTimeout(activateIframe, 400);
+            };
+            
+            iframe.onerror = () => {
+                activateFallback();
+            };
+            
+            // Timeout check in case X-Frame-Options/CSP silently prevents rendering
+            if (liveIframeTimer) clearTimeout(liveIframeTimer);
+            liveIframeTimer = setTimeout(() => {
+                if (!loaded) {
+                    activateFallback();
+                }
+            }, 3000);
+        };
+        
+        if (isFirstLive) {
+            checkLiveIframe();
+        }
+        
         // 3. Tab Switching Events
         const tabButtons = showcaseWrapper.querySelectorAll('.browser-tab-btn');
         const addressText = showcaseWrapper.querySelector('#browser-address-text');
+        const liveTag = showcaseWrapper.querySelector('#browser-live-tag');
         const visitLink = showcaseWrapper.querySelector('#browser-visit-link');
+        const visitBtnText = showcaseWrapper.querySelector('#browser-visit-btn-text');
         const viewportImg = showcaseWrapper.querySelector('#browser-viewport-img');
+        const liveIframe = showcaseWrapper.querySelector('#browser-live-iframe');
+        const iframeLoader = showcaseWrapper.querySelector('#browser-iframe-loader');
+        const fallbackView = showcaseWrapper.querySelector('#browser-fallback-view');
         
         tabButtons.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -333,18 +416,40 @@ function initProjectDetails() {
                 const newImg = scrollImages[idx];
                 const newLink = project.galleryLinks[idx];
                 const displayLink = newLink.replace('https://', '');
+                const isManSeriesLive = (idx === 0 && (project.isLiveEmbed || newLink.includes('manseries.in')));
                 
-                // Crossfade animation
-                viewportImg.style.opacity = '0';
+                addressText.innerText = displayLink;
+                visitLink.href = newLink;
+                if (visitBtnText) {
+                    visitBtnText.innerText = isManSeriesLive ? 'Visit Live Site →' : 'Visit Live Website →';
+                }
                 
-                setTimeout(() => {
-                    viewportImg.src = newImg;
-                    addressText.innerText = displayLink;
-                    visitLink.href = newLink;
+                if (liveTag) {
+                    liveTag.style.display = isManSeriesLive ? 'inline-flex' : 'none';
+                }
+                
+                if (isManSeriesLive && liveIframe) {
+                    fallbackView.style.display = 'none';
+                    if (iframeLoader) {
+                        iframeLoader.style.display = 'flex';
+                        iframeLoader.style.opacity = '1';
+                    }
+                    liveIframe.style.display = 'block';
+                    checkLiveIframe();
+                } else {
+                    if (liveIframeTimer) clearTimeout(liveIframeTimer);
+                    if (liveIframe) liveIframe.style.display = 'none';
+                    if (iframeLoader) iframeLoader.style.display = 'none';
                     
-                    // Reset scroll and show
-                    viewportImg.style.opacity = '1';
-                }, 250);
+                    fallbackView.style.display = 'block';
+                    viewportImg.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        viewportImg.src = newImg;
+                        viewportImg.alt = `${project.galleryTitles ? project.galleryTitles[idx] + ' Shopify and Web UI UX Design by Ashok Kumar' : project.title + ' Design by Ashok Kumar'}`;
+                        viewportImg.style.opacity = '1';
+                    }, 200);
+                }
             });
         });
         
