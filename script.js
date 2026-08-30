@@ -47,7 +47,7 @@ function initPortfolio() {
     }
 
     // ==========================================================================
-    // Portrait 3D Cartoon Morph (Hover & Mobile Scroll)
+    // Portrait 3D Cartoon Morph (Hover, Touch & Mobile Scroll)
     // ==========================================================================
     if (profileContainer) {
         // Desktop mouse hover listeners
@@ -58,14 +58,16 @@ function initPortfolio() {
             profileContainer.classList.remove('hover-cartoon');
         });
 
+        // Touch toggle for mobile devices
+        profileContainer.addEventListener('touchstart', () => {
+            profileContainer.classList.toggle('mobile-cartoon');
+        }, { passive: true });
+
         // Mobile scroll-triggered morph
-        const isMobile = window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(pointer: coarse)').matches;
-        if (isMobile) {
-            window.addEventListener('scroll', () => {
-                const scrollY = window.scrollY;
-                profileContainer.classList.toggle('mobile-cartoon', scrollY > 60);
-            }, { passive: true });
-        }
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            profileContainer.classList.toggle('mobile-cartoon', scrollY > 20);
+        }, { passive: true });
     }
 
     // ==========================================================================
