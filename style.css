@@ -329,6 +329,13 @@ html[data-theme="light"] .moon-icon { display: block; }
     width: 100%;
 }
 
+/* Ensure Reveal Elements are always fully visible */
+.reveal-element {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 /* ==========================================================================
    HERO SECTION
    ========================================================================== */
