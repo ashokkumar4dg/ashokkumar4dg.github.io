@@ -166,6 +166,202 @@ function initPortfolio() {
             }, 500);
         });
     }
+
+    // ==========================================================================
+    // 3D Card Tilt with Specular Lighting & Spring Physics
+    // ==========================================================================
+    const init3DCardTilt = () => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if ('ontouchstart' in window && window.innerWidth < 1024) return;
+
+        const cards = document.querySelectorAll('.project-card');
+        cards.forEach(card => {
+            const wrapper = card.querySelector('.project-img-wrapper');
+            if (!wrapper) return;
+
+            let glare = wrapper.querySelector('.card-glare');
+            if (!glare) {
+                glare = document.createElement('div');
+                glare.className = 'card-glare';
+                wrapper.appendChild(glare);
+            }
+
+            let bounds = null;
+            let currentRotX = 0;
+            let currentRotY = 0;
+            let targetRotX = 0;
+            let targetRotY = 0;
+            let isHovered = false;
+            let rafId = null;
+
+            const renderTilt = () => {
+                if (!isHovered) {
+                    targetRotX = 0;
+                    targetRotY = 0;
+                }
+
+                // Smooth linear interpolation (lerp)
+                currentRotX += (targetRotX - currentRotX) * 0.12;
+                currentRotY += (targetRotY - currentRotY) * 0.12;
+
+                wrapper.style.transform = `perspective(1000px) rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg) translateY(${isHovered ? -6 : 0}px)`;
+
+                if (isHovered || Math.abs(currentRotX) > 0.05 || Math.abs(currentRotY) > 0.05) {
+                    rafId = requestAnimationFrame(renderTilt);
+                } else {
+                    wrapper.style.transform = '';
+                    glare.style.opacity = '0';
+                    rafId = null;
+                }
+            };
+
+            card.addEventListener('mouseenter', () => {
+                bounds = wrapper.getBoundingClientRect();
+                isHovered = true;
+                glare.style.opacity = '1';
+                if (!rafId) {
+                    rafId = requestAnimationFrame(renderTilt);
+                }
+            });
+
+            card.addEventListener('mousemove', (e) => {
+                if (!bounds) bounds = wrapper.getBoundingClientRect();
+                const posX = e.clientX - bounds.left;
+                const posY = e.clientY - bounds.top;
+
+                const normX = (posX / bounds.width) - 0.5;
+                const normY = (posY / bounds.height) - 0.5;
+
+                targetRotX = -normY * 14;
+                targetRotY = normX * 14;
+
+                const glareX = (posX / bounds.width) * 100;
+                const glareY = (posY / bounds.height) * 100;
+                glare.style.background = `radial-gradient(circle at ${glareX.toFixed(1)}% ${glareY.toFixed(1)}%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.05) 30%, transparent 65%)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                isHovered = false;
+                bounds = null;
+            });
+        });
+    };
+    init3DCardTilt();
+
+    // ==========================================================================
+    // Hero Avatar Mode Switcher (3D Avatar vs Real Portrait)
+    // ==========================================================================
+    const initAvatarModeSwitcher = () => {
+        const tab3D = document.getElementById('tab-3d-avatar');
+        const tabReal = document.getElementById('tab-real-photo');
+        const container = document.getElementById('profile-container');
+
+        if (!tab3D || !tabReal || !container) return;
+
+        const setMode = (mode) => {
+            if (mode === 'avatar') {
+                tab3D.classList.add('active');
+                tabReal.classList.remove('active');
+                container.classList.remove('active-real');
+                container.classList.add('active-avatar');
+            } else {
+                tabReal.classList.add('active');
+                tab3D.classList.remove('active');
+                container.classList.remove('active-avatar');
+                container.classList.add('active-real');
+            }
+        };
+
+        tab3D.addEventListener('click', () => setMode('avatar'));
+        tabReal.addEventListener('click', () => setMode('real'));
+
+        // Re-initialize any newly rendered Lucide icons
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+            lucide.createIcons();
+        }
+    };
+    initAvatarModeSwitcher();
+
+    // ==========================================================================
+    // Hero 3D Avatar Parallax (Mouse Following Tilt)
+    // ==========================================================================
+    const initHero3DParallax = () => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if ('ontouchstart' in window && window.innerWidth < 1024) return;
+
+        const heroSec = document.getElementById('hero-sec');
+        const heroWrapper = document.getElementById('hero-3d-wrapper');
+        if (!heroSec || !heroWrapper) return;
+
+        let targetTiltX = 0;
+        let targetTiltY = 0;
+        let currentTiltX = 0;
+        let currentTiltY = 0;
+        let isHeroHovered = false;
+        let heroRaf = null;
+
+        const renderHeroParallax = () => {
+            if (!isHeroHovered) {
+                targetTiltX = 0;
+                targetTiltY = 0;
+            }
+
+            currentTiltX += (targetTiltX - currentTiltX) * 0.1;
+            currentTiltY += (targetTiltY - currentTiltY) * 0.1;
+
+            heroWrapper.style.transform = `perspective(1200px) rotateX(${currentTiltX.toFixed(2)}deg) rotateY(${currentTiltY.toFixed(2)}deg)`;
+
+            if (isHeroHovered || Math.abs(currentTiltX) > 0.05 || Math.abs(currentTiltY) > 0.05) {
+                heroRaf = requestAnimationFrame(renderHeroParallax);
+            } else {
+                heroWrapper.style.transform = '';
+                heroRaf = null;
+            }
+        };
+
+        heroSec.addEventListener('mousemove', (e) => {
+            const rect = heroSec.getBoundingClientRect();
+            const normX = ((e.clientX - rect.left) / rect.width) - 0.5;
+            const normY = ((e.clientY - rect.top) / rect.height) - 0.5;
+
+            targetTiltX = -normY * 14; // smooth ±7 deg
+            targetTiltY = normX * 18;  // smooth ±9 deg
+            isHeroHovered = true;
+
+            if (!heroRaf) {
+                heroRaf = requestAnimationFrame(renderHeroParallax);
+            }
+        });
+
+        heroSec.addEventListener('mouseleave', () => {
+            isHeroHovered = false;
+        });
+    };
+    initHero3DParallax();
+
+    // ==========================================================================
+    // Arrow Fill Button Touch & Pointer States (Haptic tactile feel)
+    // ==========================================================================
+    const initArrowFillButtons = () => {
+        const arrowBtns = document.querySelectorAll('.arrow-fill-btn');
+        arrowBtns.forEach(btn => {
+            btn.addEventListener('pointerdown', (e) => {
+                if (e.pointerType !== 'mouse') {
+                    btn.setAttribute('data-pressed', 'true');
+                }
+            });
+
+            const clearPress = () => {
+                setTimeout(() => {
+                    btn.setAttribute('data-pressed', 'false');
+                }, 450);
+            };
+
+            btn.addEventListener('pointerup', clearPress);
+            btn.addEventListener('pointercancel', clearPress);
+        });
+    };
+    initArrowFillButtons();
 }
 
 if (document.readyState === 'loading') {
