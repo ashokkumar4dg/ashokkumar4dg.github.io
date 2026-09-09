@@ -249,38 +249,173 @@ function initPortfolio() {
     init3DCardTilt();
 
     // ==========================================================================
-    // Hero Avatar Mode Switcher (3D Avatar vs Real Portrait)
+    // Interactive 3D Avatar Companion (Scroll-Stop Idle Detection & Section Guide)
     // ==========================================================================
-    const initAvatarModeSwitcher = () => {
-        const tab3D = document.getElementById('tab-3d-avatar');
-        const tabReal = document.getElementById('tab-real-photo');
-        const container = document.getElementById('profile-container');
+    const initAvatarCompanion = () => {
+        const companion = document.getElementById('avatar-companion');
+        const bubble = document.getElementById('companion-bubble');
+        const closeBtn = document.getElementById('companion-bubble-close');
+        const badgeEl = document.getElementById('companion-badge');
+        const textEl = document.getElementById('companion-text');
+        const characterBtn = document.getElementById('companion-character-btn');
+        const avatarImg = document.getElementById('companion-avatar-img');
 
-        if (!tab3D || !tabReal || !container) return;
+        if (!companion || !bubble || !characterBtn || !avatarImg) return;
 
-        const setMode = (mode) => {
-            if (mode === 'avatar') {
-                tab3D.classList.add('active');
-                tabReal.classList.remove('active');
-                container.classList.remove('active-real');
-                container.classList.add('active-avatar');
-            } else {
-                tabReal.classList.add('active');
-                tab3D.classList.remove('active');
-                container.classList.remove('active-avatar');
-                container.classList.add('active-real');
+        // Section contextual dialogues & gestures
+        const sectionDialogues = {
+            'hero-sec': {
+                badge: 'Ashok 3D Guide 👋',
+                text: 'Hey! Welcome to my portfolio. I explain how design works, not just how it looks!',
+                image: 'assets/Ashok_3D_Pointing.webp',
+                flip: false
+            },
+            'work': {
+                badge: 'Selected Projects 🚀',
+                text: 'Explore these brand & e-commerce case studies! Built for conversion and trust.',
+                image: 'assets/Ashok_3D_Pointing.webp',
+                flip: false
+            },
+            'about': {
+                badge: 'Design Philosophy 💡',
+                text: 'Brand identity, Shopify, and social systems — designed to work better for business.',
+                image: 'assets/Ashok_3D_Pointing.webp',
+                flip: false
+            },
+            'experience': {
+                badge: 'Experience Timeline 📈',
+                text: 'From SouqArena to Man Series skincare — real impact with founders & growing brands.',
+                image: 'assets/Ashok_3D_Pointing.webp',
+                flip: false
+            },
+            'contact': {
+                badge: 'Ready to Chat? 💬',
+                text: 'Have an upcoming brand or web project? Send me a quick message via WhatsApp!',
+                image: 'assets/WhiteTshirt_3D.webp',
+                flip: false
             }
         };
 
-        tab3D.addEventListener('click', () => setMode('avatar'));
-        tabReal.addEventListener('click', () => setMode('real'));
+        const randomTips = [
+            'Tip: Consistent visual identity increases brand trust and retention by over 80%! ⚡',
+            'I specialize in Shopify storefronts, brand guidelines, and high-impact social media creatives. 🎨',
+            'Need an e-commerce overhaul or high-converting product page? Let’s connect! 🚀',
+            'Design that works for business always beats decoration alone. 💡'
+        ];
+        let tipIndex = 0;
 
-        // Re-initialize any newly rendered Lucide icons
-        if (typeof lucide !== 'undefined' && lucide.createIcons) {
-            lucide.createIcons();
+        let lastActiveSection = 'hero-sec';
+        let scrollTimer = null;
+        let bubbleAutoDismissTimer = null;
+        let isUserSnoozed = false;
+        let snoozeTimer = null;
+
+        const showMessage = (badge, text, image, flip = false) => {
+            if (isUserSnoozed) return;
+
+            if (badgeEl) badgeEl.textContent = badge;
+            if (textEl) textEl.textContent = text;
+            if (avatarImg && image && avatarImg.getAttribute('src') !== image) {
+                avatarImg.style.opacity = '0';
+                setTimeout(() => {
+                    avatarImg.src = image;
+                    avatarImg.style.opacity = '1';
+                }, 200);
+            }
+
+            if (avatarImg) {
+                avatarImg.style.transform = flip ? 'scaleX(-1)' : 'scaleX(1)';
+            }
+
+            bubble.classList.add('bubble-visible');
+            characterBtn.classList.add('is-waving');
+            setTimeout(() => {
+                characterBtn.classList.remove('is-waving');
+            }, 1200);
+
+            // Auto dismiss bubble after 7 seconds if user remains idle
+            if (bubbleAutoDismissTimer) clearTimeout(bubbleAutoDismissTimer);
+            bubbleAutoDismissTimer = setTimeout(() => {
+                bubble.classList.remove('bubble-visible');
+            }, 7000);
+        };
+
+        const hideMessage = () => {
+            bubble.classList.remove('bubble-visible');
+            if (bubbleAutoDismissTimer) clearTimeout(bubbleAutoDismissTimer);
+        };
+
+        // Section observer to detect which section the user is currently viewing
+        const sections = ['hero-sec', 'work', 'about', 'experience', 'contact']
+            .map(id => document.getElementById(id))
+            .filter(Boolean);
+
+        const detectCurrentSection = () => {
+            const scrollPos = window.scrollY + window.innerHeight * 0.45;
+            let current = sections[0];
+
+            for (let i = 0; i < sections.length; i++) {
+                const sec = sections[i];
+                const top = sec.offsetTop;
+                const bottom = top + sec.offsetHeight;
+                if (scrollPos >= top && scrollPos <= bottom) {
+                    current = sec;
+                    break;
+                }
+            }
+            return current ? current.id : 'hero-sec';
+        };
+
+        // Scroll listener: detects active scroll vs idle stop
+        window.addEventListener('scroll', () => {
+            // Hide bubble while actively scrolling fast so it doesn't obstruct reading
+            hideMessage();
+
+            if (scrollTimer) clearTimeout(scrollTimer);
+
+            // User stopped scrolling (idle detection: 1.2s pause)
+            scrollTimer = setTimeout(() => {
+                const currentSecId = detectCurrentSection();
+                lastActiveSection = currentSecId;
+
+                const dialogue = sectionDialogues[currentSecId] || sectionDialogues['hero-sec'];
+                showMessage(dialogue.badge, dialogue.text, dialogue.image, dialogue.flip);
+            }, 1200);
+        }, { passive: true });
+
+        // Initial welcome after 1.5s on page load
+        setTimeout(() => {
+            const dialogue = sectionDialogues['hero-sec'];
+            showMessage(dialogue.badge, dialogue.text, dialogue.image, dialogue.flip);
+        }, 1500);
+
+        // Click on 3D character to trigger interactive greeting/tip
+        characterBtn.addEventListener('click', () => {
+            isUserSnoozed = false;
+            const currentSecId = detectCurrentSection();
+            const dialogue = sectionDialogues[currentSecId];
+
+            tipIndex = (tipIndex + 1) % randomTips.length;
+            const chosenTip = randomTips[tipIndex];
+
+            showMessage(dialogue ? dialogue.badge : 'Ashok Says 💡', chosenTip, dialogue ? dialogue.image : 'assets/Ashok_3D_Pointing.webp');
+        });
+
+        // Close/Dismiss button
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                hideMessage();
+                // Snooze automatic popups for 40 seconds so it doesn't disturb
+                isUserSnoozed = true;
+                if (snoozeTimer) clearTimeout(snoozeTimer);
+                snoozeTimer = setTimeout(() => {
+                    isUserSnoozed = false;
+                }, 40000);
+            });
         }
     };
-    initAvatarModeSwitcher();
+    initAvatarCompanion();
 
     // ==========================================================================
     // Hero 3D Avatar Parallax (Mouse Following Tilt)

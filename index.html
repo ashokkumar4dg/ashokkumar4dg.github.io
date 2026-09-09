@@ -69,7 +69,7 @@
         rel="stylesheet">
 
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=3.1">
+    <link rel="stylesheet" href="style.css?v=3.2">
 </head>
 
 <body>
@@ -152,33 +152,17 @@
 
                 <div class="hero-portrait reveal-element">
                     <div class="portrait-wrapper" id="hero-3d-wrapper">
-                        <!-- Interactive Mode Switcher -->
-                        <div class="avatar-interactive-toolbar" id="avatar-mode-toolbar">
-                            <button type="button" class="avatar-tab-btn active" id="tab-3d-avatar" aria-label="Show 3D Character Avatar">
-                                <i data-lucide="sparkles" class="tab-icon"></i>
-                                <span>3D Avatar</span>
-                            </button>
-                            <button type="button" class="avatar-tab-btn" id="tab-real-photo" aria-label="Show Real Portrait">
-                                <i data-lucide="user" class="tab-icon"></i>
-                                <span>Real Photo</span>
-                            </button>
-                        </div>
-
                         <div class="portrait-backdrop-glow" aria-hidden="true"></div>
                         <div class="portrait-container active-avatar" id="profile-container">
                             <!-- 3D Character Avatar (Primary 3D Graphic Designer Vibe) -->
                             <img src="assets/Ashok_3D_Pointing.webp" alt="Ashok Kumar - 3D Character Avatar" class="portrait-img avatar-3d-img" id="hero-avatar-3d" loading="eager">
-
-                            <!-- Real Portrait (New LinkedIn Photo & Transparent Shoot) -->
-                            <img src="assets/WhiteShirt_Transparent.webp" alt="Ashok Kumar - Real Portrait" class="portrait-img real-photo-img dark-theme-img" loading="eager">
-                            <img src="assets/Ashok_Profile_Blue.webp" alt="Ashok Kumar - LinkedIn Profile" class="portrait-img real-photo-img light-theme-img" loading="eager">
                         </div>
                         <div class="portrait-pedestal" aria-hidden="true"></div>
 
-                        <!-- 3D Tilt Hint Badge -->
+                        <!-- 3D Stage Hint Badge -->
                         <div class="portrait-hint-badge">
-                            <i data-lucide="move-3d" class="hint-icon"></i>
-                            <span>Interactive 3D Stage</span>
+                            <i data-lucide="sparkles" class="hint-icon"></i>
+                            <span>Ashok Kumar &bull; 3D Designer Avatar</span>
                         </div>
                     </div>
                 </div>
@@ -525,6 +509,29 @@
         </section>
     </main>
 
+    <!-- Interactive 3D Avatar Companion (Appears dynamically across sections) -->
+    <div class="avatar-companion-widget" id="avatar-companion" aria-label="Interactive 3D Guide" data-active-section="hero">
+        <!-- Speech Bubble (Appears when user pauses scrolling) -->
+        <div class="companion-bubble" id="companion-bubble" role="status" aria-live="polite">
+            <button class="companion-bubble-close" id="companion-bubble-close" aria-label="Dismiss message">&times;</button>
+            <div class="companion-bubble-content">
+                <span class="companion-bubble-badge" id="companion-badge">Ashok 3D Guide</span>
+                <p class="companion-bubble-text" id="companion-text">Hey there! 👋 Scroll to explore my creative work.</p>
+            </div>
+            <div class="companion-bubble-tail" aria-hidden="true"></div>
+        </div>
+
+        <!-- 3D Interactive Avatar Body -->
+        <div class="companion-character-wrap" id="companion-character-btn" role="button" tabindex="0" title="Click me to say hello!">
+            <div class="companion-glow" aria-hidden="true"></div>
+            <img src="assets/Ashok_3D_Pointing.webp" alt="Ashok Kumar - Interactive 3D Companion" class="companion-avatar-img" id="companion-avatar-img">
+            <span class="companion-status-ping" aria-hidden="true">
+                <span class="ping-wave"></span>
+                <span class="ping-dot"></span>
+            </span>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="section-container footer-container">
@@ -539,7 +546,7 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest" defer></script>
-    <script src="script.js?v=3.1" defer></script>
+    <script src="script.js?v=3.2" defer></script>
 </body>
 
 </html>
