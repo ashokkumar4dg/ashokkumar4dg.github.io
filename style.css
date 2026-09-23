@@ -358,11 +358,12 @@ img, picture {
 
 .hero-eyebrow {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: var(--space-md);
-  padding-bottom: var(--space-md);
-  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: var(--space-md);
 }
 
 .availability {
@@ -372,6 +373,17 @@ img, picture {
   align-items: center;
   gap: var(--space-xs);
   color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  transition: all var(--transition-base);
+}
+
+.availability:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: #ffffff;
 }
 
 .status-dot {
