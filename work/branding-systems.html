@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        (function() {
-            const storedTheme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', storedTheme);
-        })();
-    </script>
     <meta name="description"
         content="Identity & Branding Systems Case Study by Ashok Kumar. Visual identity design, logo design, and design systems for startups.">
     <title>Identity & Branding Systems | Ashok Kumar</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/Logo1.webp">
+    <link rel="icon" type="image/svg+xml" href="../assets/Logo_blk.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,39 +19,26 @@
         rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="../style.css?v=2.0">
+    <link rel="stylesheet" href="../style.css?v=4.1">
+    <link rel="stylesheet" href="../case-studies.css?v=4.1">
 </head>
 
-<body>
+<body class="case-page">
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- Floating Minimal Navbar -->
     <header class="navbar" id="main-navbar">
         <div class="navbar-container">
-            <a href="../index.html" class="nav-logo" id="logo-link">
-                <img src="../assets/Logo1.webp" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img" loading="eager">
-                <span class="logo-text">Ashok Kumar</span>
-            </a>
-
-            <nav class="nav-menu" id="nav-links">
-                <a href="../index.html#work" class="nav-link">Work</a>
-                <a href="../index.html#about" class="nav-link">About</a>
-                <a href="../index.html#experience" class="nav-link">Experience</a>
-                <a href="../index.html#contact" class="nav-link">Contact</a>
+            <a href="../index.html" class="nav-logo" aria-label="Ashok Kumar home"><img src="../assets/Logo_blk.svg" alt="" class="logo-img" id="nav-logo-img" width="34" height="34"><span class="logo-text">Ashok Kumar<span class="logo-dot">.</span></span></a>
+            <nav class="nav-menu" id="nav-links" aria-label="Main navigation">
+                <a href="../index.html#work" class="nav-link">Work</a><a href="../index.html#about" class="nav-link">About</a><a href="../index.html#experience" class="nav-link">Experience</a><a href="../index.html#contact" class="nav-link nav-contact">Let’s talk <span aria-hidden="true">↗</span></a>
             </nav>
-
             <div class="navbar-actions">
-                <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark/light mode">
-                    <i data-lucide="sun" class="sun-icon"></i>
-                    <i data-lucide="moon" class="moon-icon"></i>
-                </button>
-                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">
-                    <i data-lucide="menu" class="menu-open"></i>
-                    <i data-lucide="x" class="menu-close"></i>
-                </button>
+                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- 1. Case Study Header -->
         <section class="case-study-hero">
             <div class="section-container">
@@ -196,7 +177,7 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest" defer></script>
-    <script src="../script.js?v=2.0" defer></script>
+    <script src="../script.js?v=4.1" defer></script>
 </body>
 
 </html>

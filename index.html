@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        (function() {
-            const storedTheme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', storedTheme);
-        })();
-    </script>
     <meta name="description"
         content="Ashok Kumar — Graphic Designer & Web Designer | Brand Identity, Social Media Design & Shopify | Helping D2C Brands & Startups Build Strong Visual Systems. Based in Rajasthan, India.">
     <title>Ashok Kumar | Graphic Designer & Web Designer | ashokkumar4dg</title>
@@ -23,7 +17,7 @@
       "name": "Ashok Kumar",
       "alternateName": "ashokkumar4dg",
       "url": "https://ashokkumar4dg.github.io/",
-      "image": "https://ashokkumar4dg.github.io/assets/WhiteShirt_Transparent.webp",
+      "image": "https://ashokkumar4dg.github.io/assets/Ashok_Thoughtful_Portrait.webp",
       "jobTitle": "Graphic Designer & Web Designer",
       "worksFor": {
         "@type": "Organization",
@@ -54,499 +48,501 @@
     }
     </script>
 
-    <!-- Preload Critical Visual Assets -->
-    <link rel="preload" href="assets/Logo1.webp" as="image" type="image/webp">
-    <link rel="preload" href="assets/WhiteShirt_Transparent.webp" as="image" type="image/webp">
+    <!-- Preload Critical Visual Asset (Optimized WebP: 85KB vs 1.98MB PNG) -->
+    <link rel="preload" href="assets/Ashok_WhiteShirt_Cartoon_Portrait.webp" as="image" type="image/webp">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/Logo1.webp">
+    <link rel="icon" type="image/svg+xml" href="assets/Logo_blk.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=3.2">
+    <link rel="stylesheet" href="style.css?v=6.0">
 </head>
 
-<body>
-    <!-- Floating Minimal Navbar -->
+<body class="portfolio-home">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Sticky Navigation -->
     <header class="navbar" id="main-navbar">
         <div class="navbar-container">
-            <a href="index.html" class="nav-logo" id="logo-link">
-                <img src="assets/Logo1.webp" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img" loading="eager">
-                <span class="logo-text">Ashok Kumar</span>
+            <a href="index.html" class="nav-logo" aria-label="Ashok Kumar Home">
+                <img src="assets/Logo_blk.svg" alt="" class="logo-img" id="nav-logo-img" width="32" height="32">
+                <span class="logo-text">Ashok Kumar<span class="logo-dot">.</span></span>
             </a>
 
-            <nav class="nav-menu" id="nav-links">
+            <nav class="nav-menu" id="nav-links" aria-label="Main navigation">
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
                 <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#contact" class="nav-link nav-contact">
+                    <span>Let's talk</span>
+                    <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                </a>
             </nav>
 
             <div class="navbar-actions">
-                <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark/light mode">
-                    <i data-lucide="sun" class="sun-icon"></i>
-                    <i data-lucide="moon" class="moon-icon"></i>
-                </button>
-                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">
-                    <i data-lucide="menu" class="menu-open"></i>
-                    <i data-lucide="x" class="menu-close"></i>
+                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- Hero Section -->
-        <section class="hero" id="hero-sec">
-            <div class="hero-ambient-mesh" aria-hidden="true"></div>
-            <div class="section-container hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge reveal-element">
-                        <span class="status-dot"></span> Available for Select Opportunities &bull; Man Series
-                    </div>
+        <section class="hero section-container" id="hero-sec" aria-labelledby="hero-title">
+            <div class="hero-eyebrow">
+                <span class="eyebrow">Independent creative thinking. Real-world design.</span>
+                <div class="availability" aria-label="Availability status">
+                    <span class="status-dot"></span>
+                    <span>Open to select opportunities</span>
+                </div>
+            </div>
+
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <h1 id="hero-title">Good design.<br>Clear <span>purpose.</span></h1>
+                    <p class="hero-lead">Hi, I'm Ashok — a graphic &amp; web designer helping D2C brands, startups, and growing businesses build thoughtful visual systems and digital experiences that leave a lasting mark.</p>
                     
-                    <!-- Specialty Pills from LinkedIn Banner -->
-                    <div class="hero-specialty-pills reveal-element">
-                        <span class="specialty-pill"><i data-lucide="sparkles" class="pill-icon"></i> Brand Design</span>
-                        <span class="specialty-pill"><i data-lucide="share-2" class="pill-icon"></i> Social Media</span>
-                        <span class="specialty-pill"><i data-lucide="layout" class="pill-icon"></i> Web Design</span>
-                        <span class="specialty-pill"><i data-lucide="shopping-bag" class="pill-icon"></i> Shopify E-com</span>
-                    </div>
-
-                    <h1 class="hero-title reveal-element">
-                        I explain how design <span class="text-highlight">works</span>, not just how it looks.
-                    </h1>
-                    <p class="hero-subtitle reveal-element">
-                        Graphic & Web Designer specializing in Brand Identity, Social Media Design & Shopify — helping D2C brands & modern startups build strong, high-converting visual systems. Based in Rajasthan, India.
-                    </p>
-                    <div class="hero-actions reveal-element">
-                        <!-- Hyperiux Inspired Arrow Fill Button (Primary) -->
-                        <a href="#work" class="arrow-fill-btn arrow-fill-primary" id="hero-primary-cta" aria-label="Explore Work">
-                            <span class="btn-text-base">Explore Work</span>
-                            <span class="btn-fill-circle" aria-hidden="true"></span>
-                            <span class="btn-text-fill" aria-hidden="true"><span>Explore Work</span></span>
-                            <span class="btn-arrow-badge" aria-hidden="true">
-                                <svg class="btn-arrow btn-arrow-entering" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                                <svg class="btn-arrow btn-arrow-leaving" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </span>
+                    <div class="hero-actions">
+                        <a href="#work" class="btn btn-primary">
+                            <span>Explore my work</span>
+                            <svg class="icon-arrow-down" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
                         </a>
-
-                        <!-- Hyperiux Inspired Arrow Fill Button (Secondary) -->
-                        <a href="#contact" class="arrow-fill-btn arrow-fill-secondary" id="hero-secondary-cta" aria-label="Get in Touch">
-                            <span class="btn-text-base">Get in Touch</span>
-                            <span class="btn-fill-circle" aria-hidden="true"></span>
-                            <span class="btn-text-fill" aria-hidden="true"><span>Get in Touch</span></span>
-                            <span class="btn-arrow-badge" aria-hidden="true">
-                                <svg class="btn-arrow btn-arrow-entering" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                                <svg class="btn-arrow btn-arrow-leaving" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </span>
+                        <a href="#contact" class="text-link">
+                            <span>Have a project in mind?</span>
+                            <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
+
+                    <div class="hero-location-wrap">
+                        <span class="location">Based in Rajasthan, India</span>
+                    </div>
                 </div>
 
-                <div class="hero-portrait reveal-element">
-                    <div class="portrait-wrapper" id="hero-3d-wrapper">
-                        <div class="portrait-backdrop-glow" aria-hidden="true"></div>
-                        <div class="portrait-container active-avatar" id="profile-container">
-                            <!-- 3D Character Avatar (Primary 3D Graphic Designer Vibe) -->
-                            <img src="assets/Ashok_3D_Pointing.webp" alt="Ashok Kumar - 3D Character Avatar" class="portrait-img avatar-3d-img" id="hero-avatar-3d" loading="eager">
+                <div class="hero-visual">
+                    <div class="hero-visual-frame">
+                        <picture>
+                            <source srcset="assets/Ashok_WhiteShirt_Cartoon_Portrait.webp" type="image/webp">
+                            <img src="assets/Ashok_WhiteShirt_Cartoon_Portrait.png" alt="Ashok Kumar, graphic & web designer" width="440" height="660" class="hero-portrait-png" fetchpriority="high" decoding="async">
+                        </picture>
+                        <div class="hero-floating-badge" aria-hidden="true">
+                            <span class="badge-dot"></span>
+                            <span>Ashok Kumar &bull; Thoughtful Design</span>
                         </div>
-                        <div class="portrait-pedestal" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
 
-                        <!-- 3D Stage Hint Badge -->
-                        <div class="portrait-hint-badge">
-                            <i data-lucide="sparkles" class="hint-icon"></i>
-                            <span>Ashok Kumar &bull; 3D Designer Avatar</span>
+            <div class="hero-bottom">
+                <span>Brand identity <b aria-hidden="true">/</b> Social media <b aria-hidden="true">/</b> Web &amp; Shopify <b aria-hidden="true">/</b> Editorial &amp; Print</span>
+                <a href="#about" class="text-link hero-scroll-indicator" aria-label="Scroll to about section">
+                    <span>A little about who's making it</span>
+                    <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Selected Work Section -->
+        <section class="work section-container section-space" id="work" aria-labelledby="work-title">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow section-index">01 / Selected work</span>
+                    <h2 id="work-title">A few things I've made<span class="blue-dot">.</span></h2>
+                </div>
+                <p>Across brands, screens, and print.<br>Made with intention, down to the details.</p>
+            </div>
+
+            <div class="work-filters" role="group" aria-label="Filter projects">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All work <span>06</span></button>
+                <button class="filter-btn" data-filter="web" aria-pressed="false">Web &amp; Shopify</button>
+                <button class="filter-btn" data-filter="brand" aria-pressed="false">Brand &amp; Social</button>
+                <button class="filter-btn" data-filter="print" aria-pressed="false">Print &amp; Editorial</button>
+            </div>
+
+            <p class="sr-only" id="filter-status" aria-live="polite"></p>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Project 01 -->
+                <a href="work/man-series.html" class="project-card" data-category="web">
+                    <div class="project-visual project-web">
+                        <span class="project-image-label">DIGITAL EXPERIENCE</span>
+                        <img src="assets/manseries-mockup-laptop.webp" alt="Man Series skincare storefront displayed on a laptop" width="1024" height="603" fetchpriority="high">
+                        <span class="project-view" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>Man Series</h3>
+                            <p>Shopify storefront &bull; UI/UX design</p>
                         </div>
+                        <span class="project-number">01</span>
+                    </div>
+                </a>
+
+                <!-- Project 02 -->
+                <a href="work/book-covers.html" class="project-card" data-category="print">
+                    <div class="project-visual project-book">
+                        <img src="assets/Book Cover/mansoonmemories1.webp" alt="Monsoon Memories book cover in a warm editorial setting" width="1122" height="1402" loading="lazy">
+                        <span class="project-view" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>Monsoon Memories</h3>
+                            <p>Book cover &bull; Editorial design</p>
+                        </div>
+                        <span class="project-number">02</span>
+                    </div>
+                </a>
+
+                <!-- Project 03 -->
+                <a href="work/social-media.html" class="project-card" data-category="brand">
+                    <div class="project-visual project-social">
+                        <img src="assets/Social Media Posts/Socialmedia4.webp" alt="Blue perfume campaign design" width="1587" height="2245" loading="lazy">
+                        <img src="assets/Social Media Posts/Socialmedia1.webp" alt="School admissions social media creative" width="3508" height="4961" loading="lazy">
+                        <span class="project-view" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>Designed for the feed</h3>
+                            <p>Social campaigns &bull; Marketing creatives</p>
+                        </div>
+                        <span class="project-number">03</span>
+                    </div>
+                </a>
+
+                <!-- Project 04 -->
+                <a href="work/branding-systems.html" class="project-card" data-category="brand">
+                    <div class="project-visual project-brand">
+                        <img src="assets/project-brand.png" alt="NOVA geometric brand identity and stationery system" width="1024" height="1024" loading="lazy">
+                        <span class="project-view" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>Identity &amp; branding systems</h3>
+                            <p>Brand identity &bull; Visual direction</p>
+                        </div>
+                        <span class="project-number">04</span>
+                    </div>
+                </a>
+
+                <!-- Project 05 -->
+                <a href="work/poster-design.html" class="project-card" data-category="print">
+                    <div class="project-visual project-poster">
+                        <img src="assets/project-poster.png" alt="Swiss typographic poster with a geometric primary-color composition" width="1024" height="1024" loading="lazy">
+                        <span class="project-view" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>Type, form &amp; a little order</h3>
+                            <p>Poster design &bull; Grid systems</p>
+                        </div>
+                        <span class="project-number">05</span>
+                    </div>
+                </a>
+
+                <!-- Project 06 -->
+                <a href="work/invitations.html" class="project-card" data-category="print">
+                    <div class="project-visual project-invitation">
+                        <img src="assets/Invitation Card/WeddingCard1.webp" alt="Navy and gold wedding invitation design" width="2481" height="3508" loading="lazy">
+                        <span class="project-view" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </span>
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3>A personal invitation</h3>
+                            <p>Invitations &bull; Print &amp; stationery</p>
+                        </div>
+                        <span class="project-number">06</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="work-footer">
+                <p>More ideas, experiments, and work in progress.</p>
+                <a href="https://www.behance.net/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="text-link">
+                    <span>Find me on Behance</span>
+                    <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section-space" id="about" aria-labelledby="about-title">
+            <div class="section-container about-layout">
+                <div class="about-photo">
+                    <div class="about-portrait-wrap">
+                        <picture>
+                            <source srcset="assets/Ashok_WhiteShirt_ArmsCrossed_HalfBody.webp" type="image/webp">
+                            <img src="assets/Ashok_WhiteShirt_ArmsCrossed_HalfBody.png" alt="Ashok Kumar, graphic and web designer" class="about-portrait-img" width="724" height="920" loading="lazy">
+                        </picture>
+                        <div class="about-portrait-badge">
+                            <span class="badge-dot"></span>
+                            <span>Ashok Kumar &bull; The Person Behind The Pixels</span>
+                        </div>
+                    </div>
+                    <div class="portrait-caption">
+                        <span>Designer. Thinker. Always curious.</span>
+                        <span>Rajasthan, IN</span>
+                    </div>
+                </div>
+
+                <div class="about-copy">
+                    <span class="eyebrow section-index">02 / A little about me</span>
+                    <h2 id="about-title">Thoughtful by nature.<br>Designer by choice.</h2>
+                    <p class="lead-text">I believe good design makes things easier to understand, easier to use, and harder to forget.</p>
+                    <p>I'm Ashok, a graphic and web designer based in Rajasthan. I work with D2C brands, startups, and growing businesses to bring clarity and consistency to their visual presence.</p>
+                    <p>At Man Series, I collaborate directly with the founders across brand creatives, packaging, and the Shopify experience. My approach is simple: understand the purpose, then make every detail count.</p>
+                    <a href="https://www.linkedin.com/in/ashokkumar4dg/" target="_blank" rel="noopener noreferrer" class="text-link">
+                        <span>More about my journey</span>
+                        <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                    </a>
+
+                    <div class="tool-list">
+                        <span>My everyday toolkit</span>
+                        <p>Figma &bull; Photoshop &bull; Illustrator &bull; Canva &bull; Affinity Designer</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Selected Projects Section (2-Column Curated Grid) -->
-        <section class="work" id="work">
-            <div class="section-container">
-                <div class="section-header reveal-element">
-                    <span class="section-kicker">Portfolio</span>
-                    <h2 class="section-title">Selected Projects</h2>
-                    <p class="section-subtitle">A curated collection of e-commerce storefronts, visual systems, and editorial designs.</p>
+        <!-- Services Section (Lightweight WebP Assets: 17KB total vs 2.5MB) -->
+        <section class="services section-container section-space" id="services" aria-labelledby="services-title">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow section-index">How I can help</span>
+                    <h2 id="services-title">From first impression<br>to lasting identity.</h2>
                 </div>
+                <p>A consistent design partner,<br>across every brand touchpoint.</p>
+            </div>
 
-                <div class="projects-grid" id="projects-grid">
-                    <!-- Project 1: Man Series -->
-                    <a href="work/man-series.html" class="project-card reveal-element">
-                        <div class="project-img-wrapper">
-                            <img src="assets/manseries-mockup-laptop.webp?v=2.0" alt="Man Series — Live Shopify Store" class="project-card-image" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Man Series — Live Shopify Store</h3>
-                            <span class="project-tag">Shopify & E-commerce UI/UX</span>
-                        </div>
-                    </a>
+            <div class="service-grid">
+                <article class="service-card">
+                    <div class="service-icon-wrap">
+                        <img src="assets/service-brand.webp" alt="Brand identity icon" class="service-icon" width="80" height="80" loading="lazy">
+                    </div>
+                    <span class="service-number">01</span>
+                    <h3>Brand identity</h3>
+                    <p>Distinctive logos, visual systems, and packaging that give your brand a clear, consistent voice.</p>
+                    <span class="service-tags">Identity / Guidelines / Packaging</span>
+                </article>
 
-                    <!-- Project 2: Identity & Branding -->
-                    <a href="work/branding-systems.html" class="project-card reveal-element">
-                        <div class="project-img-wrapper">
-                            <img src="assets/project-brand.png" alt="Identity & Branding Systems" class="project-card-image" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Identity & Branding Systems</h3>
-                            <span class="project-tag">Brand Identity Design</span>
-                        </div>
-                    </a>
+                <article class="service-card">
+                    <div class="service-icon-wrap">
+                        <img src="assets/service-digital.webp" alt="Digital experiences icon" class="service-icon" width="80" height="80" loading="lazy">
+                    </div>
+                    <span class="service-number">02</span>
+                    <h3>Digital experiences</h3>
+                    <p>Thoughtful websites and Shopify storefronts that make browsing and buying feel natural.</p>
+                    <span class="service-tags">Web design / Shopify / UI/UX</span>
+                </article>
 
-                    <!-- Project 3: Social Media -->
-                    <a href="work/social-media.html" class="project-card reveal-element">
-                        <div class="project-img-wrapper">
-                            <img src="assets/Social Media Posts/Socialmedia1.webp" alt="Social Media Creative Campaign" class="project-card-image" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Social Media Creative Campaign</h3>
-                            <span class="project-tag">Marketing & Social Creatives</span>
-                        </div>
-                    </a>
-
-                    <!-- Project 4: Book Covers -->
-                    <a href="work/book-covers.html" class="project-card reveal-element">
-                        <div class="project-img-wrapper">
-                            <img src="assets/Book Cover/mansoonmemoriesFront.webp" alt="Monsoon Memories Book Cover" class="project-card-image" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Monsoon Memories</h3>
-                            <span class="project-tag">Editorial & Book Cover Design</span>
-                        </div>
-                    </a>
-
-                    <!-- Project 5: Posters -->
-                    <a href="work/poster-design.html" class="project-card reveal-element">
-                        <div class="project-img-wrapper">
-                            <img src="assets/project-poster.png" alt="Swiss Typographic Posters" class="project-card-image" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Swiss Typographic Posters</h3>
-                            <span class="project-tag">Print & Grid Systems</span>
-                        </div>
-                    </a>
-
-                    <!-- Project 6: Invitations -->
-                    <a href="work/invitations.html" class="project-card reveal-element">
-                        <div class="project-img-wrapper">
-                            <img src="assets/Invitation Card/WeddingCard1.webp" alt="Premium Invitation Layouts" class="project-card-image" loading="lazy">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Premium Invitation Layouts</h3>
-                            <span class="project-tag">Print & Stationery</span>
-                        </div>
-                    </a>
-                </div>
+                <article class="service-card">
+                    <div class="service-icon-wrap">
+                        <img src="assets/service-visual.webp" alt="Visual communication icon" class="service-icon" width="80" height="80" loading="lazy">
+                    </div>
+                    <span class="service-number">03</span>
+                    <h3>Visual communication</h3>
+                    <p>Social campaigns, book covers, and print pieces that turn your message into something memorable.</p>
+                    <span class="service-tags">Social media / Editorial / Print</span>
+                </article>
             </div>
         </section>
 
-        <!-- About Section (Extracted from LinkedIn Summary) -->
-        <section class="about" id="about">
-            <div class="section-container">
-                <div class="section-header reveal-element">
-                    <span class="section-kicker">About</span>
-                    <h2 class="section-title">Design That Works Better for Business</h2>
+        <!-- Experience Section -->
+        <section class="experience section-container section-space" id="experience" aria-labelledby="experience-title">
+            <div class="experience-layout">
+                <div>
+                    <span class="eyebrow section-index">03 / Along the way</span>
+                    <h2 id="experience-title">Learning.<br>Making.<br>Moving forward.</h2>
+                    <p class="experience-intro">Real projects, close collaboration,<br>and a little growth with every brief.</p>
                 </div>
 
-                <div class="about-grid">
-                    <div class="about-statement reveal-element">
-                        <p class="lead-text">
-                            I help D2C brands, startups, and growing businesses build a clear and consistent visual presence across brand, social media, and web.
-                        </p>
-                        <p class="body-text">
-                            My work combines graphic design, brand identity, social media design, Shopify design, and web design with a focus on making design not just look good, but work better for the business. I currently work on real-world brand and e-commerce projects, where I handle visual design, website layouts, campaign creatives, and design consistency across multiple touchpoints.
-                        </p>
-                        <p class="body-text" style="margin-top: 1rem;">
-                            My approach is simple: <strong>I explain how design works, not just how it looks.</strong> If you’re building a D2C brand, startup, or digital product and need help improving your visual presence, feel free to connect or message me.
-                        </p>
-                    </div>
+                <div class="experience-list">
+                    <details class="experience-entry">
+                        <summary>
+                            <span class="experience-date">Aug 2026 — Present</span>
+                            <span class="experience-position">
+                                <strong>Graphic &amp; Web Designer</strong>
+                                <span>Man Series</span>
+                            </span>
+                            <span class="details-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <p>Working directly with the founders on brand creatives, product packaging, campaign assets, and responsive Shopify storefront experiences.</p>
+                    </details>
 
-                    <div class="about-tags-wrapper reveal-element">
-                        <div class="tag-group">
-                            <h3 class="tag-group-title">Focus Areas & Competencies</h3>
-                            <div class="tag-list">
-                                <span class="minimal-tag">Brand Identity & Visual Systems</span>
-                                <span class="minimal-tag">Shopify & E-commerce Design</span>
-                                <span class="minimal-tag">Social Media & Carousel Design</span>
-                                <span class="minimal-tag">Landing Pages & Web Design</span>
-                                <span class="minimal-tag">UI/UX & Conversion Layouts</span>
-                                <span class="minimal-tag">AI-Assisted Creative Workflows</span>
-                                <span class="minimal-tag">Product Packaging & Visuals</span>
-                            </div>
-                        </div>
+                    <details class="experience-entry">
+                        <summary>
+                            <span class="experience-date">May — Aug 2026</span>
+                            <span class="experience-position">
+                                <strong>Graphic Design Intern</strong>
+                                <span>Man Series</span>
+                            </span>
+                            <span class="details-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <p>Supported brand communication through product visuals, social media content, packaging, and e-commerce design.</p>
+                    </details>
 
-                        <div class="tag-group">
-                            <h3 class="tag-group-title">Software & Tools</h3>
-                            <div class="tag-list">
-                                <span class="minimal-tag">Figma</span>
-                                <span class="minimal-tag">Photoshop</span>
-                                <span class="minimal-tag">Illustrator</span>
-                                <span class="minimal-tag">Canva</span>
-                                <span class="minimal-tag">CapCut</span>
-                                <span class="minimal-tag">Affinity Designer</span>
-                            </div>
-                        </div>
+                    <details class="experience-entry">
+                        <summary>
+                            <span class="experience-date">Sep 2025 — Present</span>
+                            <span class="experience-position">
+                                <strong>Senior Graphic Designer</strong>
+                                <span>Freelance / Self-employed</span>
+                            </span>
+                            <span class="details-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <p>Creating logos, posters, social media creatives, and e-commerce visuals for independent projects and creators.</p>
+                    </details>
 
-                        <div class="tag-group">
-                            <h3 class="tag-group-title">Top Skills & Languages</h3>
-                            <div class="tag-list">
-                                <span class="minimal-tag">Brand Design</span>
-                                <span class="minimal-tag">Visual Design</span>
-                                <span class="minimal-tag">Social Media</span>
-                                <span class="minimal-tag">Hindi (Native / Fluent)</span>
-                                <span class="minimal-tag">English (Professional Working)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <details class="experience-entry">
+                        <summary>
+                            <span class="experience-date">Nov 2024 — Jan 2025</span>
+                            <span class="experience-position">
+                                <strong>Project Intern</strong>
+                                <span>SouqArena</span>
+                            </span>
+                            <span class="details-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <p>Designed product-focused e-commerce banners and carousel assets with clear messaging and consistent visual styling.</p>
+                    </details>
 
-        <!-- Professional Journey Section (Extracted from LinkedIn Experience) -->
-        <section class="experience" id="experience">
-            <div class="section-container">
-                <div class="section-header reveal-element">
-                    <span class="section-kicker">Experience</span>
-                    <h2 class="section-title">Professional Journey</h2>
-                    <p class="section-subtitle">Real-world brand experience, agency partnerships, freelance client projects, and education.</p>
-                </div>
-
-                <div class="minimal-timeline">
-                    <!-- Timeline Item 1: Man Series — Graphic & Web Designer -->
-                    <div class="timeline-entry reveal-element">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-body">
-                            <div class="timeline-meta">
-                                <span class="timeline-period">August 2026 — Present (2 mos)</span>
-                                <span class="timeline-location">Barmer, Rajasthan</span>
-                            </div>
-                            <h3 class="timeline-heading">Graphic & Web Designer</h3>
-                            <h4 class="timeline-subheading">Man Series &bull; Direct Founder Collaboration</h4>
-                            <div class="timeline-description">
-                                <ul class="timeline-bullets">
-                                    <li class="timeline-bullet-item">Collaborate directly with the founders to translate brand and business goals into clear visual communication.</li>
-                                    <li class="timeline-bullet-item">Design brand creatives, product packaging, social media content, campaign assets, and e-commerce visuals.</li>
-                                    <li class="timeline-bullet-item">Create and improve Shopify storefront layouts, landing pages, product sections, promotional banners, and responsive web experiences.</li>
-                                    <li class="timeline-bullet-item">Maintain visual consistency across brand, website, packaging, and marketing touchpoints.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 2: Man Series — Graphic Design Intern -->
-                    <div class="timeline-entry reveal-element">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-body">
-                            <div class="timeline-meta">
-                                <span class="timeline-period">May 2026 — August 2026 (4 mos)</span>
-                                <span class="timeline-location">Barmer, Rajasthan</span>
-                            </div>
-                            <h3 class="timeline-heading">Graphic Design Intern</h3>
-                            <h4 class="timeline-subheading">Man Series (Science-Backed Men's Skincare)</h4>
-                            <div class="timeline-description">
-                                <ul class="timeline-bullets">
-                                    <li class="timeline-bullet-item">Worked directly with the founders on brand creatives, product packaging, Shopify storefront visuals, social media content, and campaign assets for a science-backed men’s skincare brand.</li>
-                                    <li class="timeline-bullet-item">Supported e-commerce design, product visuals, UI improvements, and consistent brand communication across digital platforms.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 3: Freelance / Self-Employed -->
-                    <div class="timeline-entry reveal-element">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-body">
-                            <div class="timeline-meta">
-                                <span class="timeline-period">September 2025 — Present</span>
-                                <span class="timeline-location">Rajasthan, India (Remote)</span>
-                            </div>
-                            <h3 class="timeline-heading">Senior Graphic Designer</h3>
-                            <h4 class="timeline-subheading">Freelance | Self-Employed</h4>
-                            <div class="timeline-description">
-                                <ul class="timeline-bullets">
-                                    <li class="timeline-bullet-item">Created logos, posters, social media creatives, and e-commerce visuals for independent projects and global creators.</li>
-                                    <li class="timeline-bullet-item">Used typography, colour, hierarchy, and layout to turn briefs into clear visual communication.</li>
-                                    <li class="timeline-bullet-item">Prepared platform-ready assets for digital and brand applications.</li>
-                                    <li class="timeline-bullet-item">Documented selected work as high-impact portfolio case studies.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 4: SouqArena -->
-                    <div class="timeline-entry reveal-element">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-body">
-                            <div class="timeline-meta">
-                                <span class="timeline-period">November 2024 — January 2025 (3 mos)</span>
-                                <span class="timeline-location">India (Remote)</span>
-                            </div>
-                            <h3 class="timeline-heading">Project Intern</h3>
-                            <h4 class="timeline-subheading">SouqArena &bull; E-commerce Banner & Carousel Creative</h4>
-                            <div class="timeline-description">
-                                <ul class="timeline-bullets">
-                                    <li class="timeline-bullet-item">Created e-commerce product banners and carousel creatives during a three-month project internship at SouqArena.</li>
-                                    <li class="timeline-bullet-item">Designed product-focused website banners and carousel assets with clear product hierarchy, concise messaging, and consistent visual styling.</li>
-                                    <li class="timeline-bullet-item">Adapted creatives for different website and campaign requirements.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 5: Education -->
-                    <div class="timeline-entry reveal-element">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-body">
-                            <div class="timeline-meta">
-                                <span class="timeline-period">June 2022 — May 2024</span>
-                                <span class="timeline-location">Jodhpur, Rajasthan</span>
-                            </div>
-                            <h3 class="timeline-heading">Bachelor of Computer Application (BCA)</h3>
-                            <h4 class="timeline-subheading">Jai Narain Vyas University (JNVU)</h4>
-                            <p class="timeline-description">
-                                Computer / Information Technology Administration and Management. Built a strong technical foundation in computer applications, programming workflows, and system architecture, enabling seamless design-to-code execution.
-                            </p>
-                        </div>
-                    </div>
+                    <details class="experience-entry">
+                        <summary>
+                            <span class="experience-date">Jun 2022 — May 2024</span>
+                            <span class="experience-position">
+                                <strong>Bachelor of Computer Application</strong>
+                                <span>Jai Narain Vyas University, Jodhpur</span>
+                            </span>
+                            <span class="details-icon" aria-hidden="true">+</span>
+                        </summary>
+                        <p>Built a technical foundation in computer applications, programming workflows, and system architecture.</p>
+                    </details>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="contact" id="contact">
+        <section class="contact section-space" id="contact" aria-labelledby="contact-title">
             <div class="section-container">
-                <div class="section-header reveal-element">
-                    <span class="section-kicker">Contact</span>
-                    <h2 class="section-title">Let's Work Together</h2>
-                    <p class="section-subtitle">Have a project in mind, a brand to build, or an e-commerce store to design? Let's connect.</p>
+                <div class="contact-heading">
+                    <span class="eyebrow section-index">04 / Your next good idea</span>
+                    <h2 id="contact-title">Let's make<br>something <span>matter.</span></h2>
                 </div>
 
                 <div class="contact-grid">
-                    <div class="contact-sidebar reveal-element">
-                        <div class="direct-links">
-                            <a href="mailto:ashokkumar4dg@gmail.com" class="direct-link-item">
-                                <span class="direct-link-label">Email</span>
-                                <span class="direct-link-value">ashokkumar4dg@gmail.com</span>
-                            </a>
-                            <a href="https://wa.me/918696289847" target="_blank" rel="noopener noreferrer" class="direct-link-item">
-                                <span class="direct-link-label">WhatsApp</span>
-                                <span class="direct-link-value">+91 8696289847</span>
-                            </a>
-                            <div class="direct-link-item">
-                                <span class="direct-link-label">Location</span>
-                                <span class="direct-link-value">Rajasthan, India (Remote Friendly)</span>
-                            </div>
+                    <div class="contact-copy">
+                        <p>Have a brand to build, a story to tell,<br>or a project you've been thinking about?<br>I'd love to hear it.</p>
+                        
+                        <a class="contact-email" href="mailto:ashokkumar4dg@gmail.com">
+                            <span>ashokkumar4dg@gmail.com</span>
+                            <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </a>
+                        
+                        <a class="contact-whatsapp" href="https://wa.me/918696289847" target="_blank" rel="noopener noreferrer">
+                            <span>Or say hello on WhatsApp</span>
+                            <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </a>
+
+                        <div class="contact-availability">
+                            <span class="status-dot"></span>
+                            <span>Based in India &bull; Open to remote collaboration</span>
                         </div>
 
                         <div class="social-row">
-                            <a href="https://www.behance.net/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-text-link">Behance</a>
-                            <span class="social-separator">/</span>
-                            <a href="https://www.linkedin.com/in/ashokkumar4dg/" target="_blank" rel="noopener noreferrer" class="social-text-link">LinkedIn</a>
-                            <span class="social-separator">/</span>
-                            <a href="https://instagram.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-text-link">Instagram</a>
-                            <span class="social-separator">/</span>
-                            <a href="https://x.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer" class="social-text-link">X (Twitter)</a>
+                            <a href="https://www.behance.net/ashokkumar4dg" target="_blank" rel="noopener noreferrer">
+                                <span>Behance</span>
+                                <svg class="icon-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ashokkumar4dg/" target="_blank" rel="noopener noreferrer">
+                                <span>LinkedIn</span>
+                                <svg class="icon-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                            </a>
+                            <a href="https://instagram.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer">
+                                <span>Instagram</span>
+                                <svg class="icon-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                            </a>
+                            <a href="https://x.com/ashokkumar4dg" target="_blank" rel="noopener noreferrer">
+                                <span>X</span>
+                                <svg class="icon-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="contact-form-wrapper reveal-element">
-                        <form class="minimal-contact-form" id="portfolio-contact-form" action="#" method="POST">
-                            <!-- Name -->
+                    <!-- Direct WhatsApp High-Conversion Form -->
+                    <form id="portfolio-contact-form" class="contact-form" novalidate>
+                        <div class="form-two-column">
                             <div class="form-row">
-                                <label for="form-name" class="minimal-label">Your Name</label>
-                                <input type="text" id="form-name" name="name" required placeholder="John Doe" class="minimal-input" autocomplete="name">
+                                <label for="form-name">Your name</label>
+                                <input id="form-name" name="name" type="text" autocomplete="name" placeholder="What should I call you?" required maxlength="120">
                             </div>
-
-                            <!-- Reason (Pills) -->
                             <div class="form-row">
-                                <label class="minimal-label">Project Type</label>
-                                <div class="minimal-pills" id="reason-pills" role="group" aria-label="Reason for contact">
-                                    <button type="button" class="reason-pill" data-value="Freelance Project">Freelance Project</button>
-                                    <button type="button" class="reason-pill" data-value="Full-time Hire">Full-time Hire</button>
-                                    <button type="button" class="reason-pill" data-value="Internship Opportunity">Internship</button>
-                                    <button type="button" class="reason-pill" data-value="Design Collaboration">Collaboration</button>
-                                </div>
-                                <input type="hidden" id="form-reason" name="reason" required>
+                                <label for="form-email">Email address</label>
+                                <input type="email" id="form-email" name="email" autocomplete="email" placeholder="you@company.com" required maxlength="254">
                             </div>
+                        </div>
 
-                            <!-- Email -->
-                            <div class="form-row">
-                                <label for="form-email" class="minimal-label">Email Address</label>
-                                <input type="email" id="form-email" name="email" required placeholder="john@example.com" class="minimal-input" autocomplete="email">
+                        <fieldset class="form-row">
+                            <legend>I'm interested in...</legend>
+                            <div class="reason-options" role="radiogroup">
+                                <label class="radio-chip"><input type="radio" name="reason" value="Brand identity" checked><span>Brand identity</span></label>
+                                <label class="radio-chip"><input type="radio" name="reason" value="Web & Shopify"><span>Web &amp; Shopify</span></label>
+                                <label class="radio-chip"><input type="radio" name="reason" value="Social & print"><span>Social &amp; print</span></label>
+                                <label class="radio-chip"><input type="radio" name="reason" value="Something else"><span>Something else</span></label>
                             </div>
+                        </fieldset>
 
-                            <!-- Message -->
-                            <div class="form-row">
-                                <label for="form-message" class="minimal-label">Project Details</label>
-                                <textarea id="form-message" name="message" required placeholder="Tell me about your brand, timeline, and deliverables..." rows="4" class="minimal-input minimal-textarea"></textarea>
-                            </div>
+                        <div class="form-row">
+                            <label for="form-message">A little about your project</label>
+                            <textarea id="form-message" name="message" rows="3" placeholder="The idea, the timeline, the possibilities..." required maxlength="3000"></textarea>
+                        </div>
 
-                            <button type="submit" class="arrow-fill-btn arrow-fill-primary btn-full" id="submit-btn">
-                                <span class="btn-text-base">Send via WhatsApp</span>
-                                <span class="btn-fill-circle" aria-hidden="true"></span>
-                                <span class="btn-text-fill" aria-hidden="true"><span>Send via WhatsApp</span></span>
-                                <span class="btn-arrow-badge" aria-hidden="true">
-                                    <svg class="btn-arrow btn-arrow-entering" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                                    <svg class="btn-arrow btn-arrow-leaving" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                                </span>
-                            </button>
-
-                            <div class="form-status" id="form-feedback">
-                                <p class="success-msg">Opening WhatsApp...</p>
-                            </div>
-                        </form>
-                    </div>
+                        <button class="btn btn-primary btn-submit" type="submit" id="submit-btn">
+                            <span>Send via WhatsApp</span>
+                            <svg class="icon-send" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                        </button>
+                        
+                        <p class="form-note">Your pre-filled message will open directly in WhatsApp for you to review and send.</p>
+                        
+                        <div id="form-feedback" role="status" hidden>
+                            <p>Opening WhatsApp... If it didn't open automatically, <a id="whatsapp-link" class="text-link" target="_blank" rel="noopener noreferrer">click here to continue &rarr;</a></p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Interactive 3D Avatar Companion (Appears dynamically across sections) -->
-    <div class="avatar-companion-widget" id="avatar-companion" aria-label="Interactive 3D Guide" data-active-section="hero">
-        <!-- Speech Bubble (Appears when user pauses scrolling) -->
-        <div class="companion-bubble" id="companion-bubble" role="status" aria-live="polite">
-            <button class="companion-bubble-close" id="companion-bubble-close" aria-label="Dismiss message">&times;</button>
-            <div class="companion-bubble-content">
-                <span class="companion-bubble-badge" id="companion-badge">Ashok 3D Guide</span>
-                <p class="companion-bubble-text" id="companion-text">Hey there! 👋 Scroll to explore my creative work.</p>
-            </div>
-            <div class="companion-bubble-tail" aria-hidden="true"></div>
-        </div>
-
-        <!-- 3D Interactive Avatar Body -->
-        <div class="companion-character-wrap" id="companion-character-btn" role="button" tabindex="0" title="Click me to say hello!">
-            <div class="companion-glow" aria-hidden="true"></div>
-            <img src="assets/Ashok_3D_Pointing.webp" alt="Ashok Kumar - Interactive 3D Companion" class="companion-avatar-img" id="companion-avatar-img">
-            <span class="companion-status-ping" aria-hidden="true">
-                <span class="ping-wave"></span>
-                <span class="ping-dot"></span>
-            </span>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="section-container footer-container">
-            <div class="footer-copy">
-                &copy; 2026 Ashok Kumar. Designed with intention.
-            </div>
-            <a href="#" class="back-to-top" id="scroll-to-top" aria-label="Back to top">
-                <span>Back to Top &uarr;</span>
+            <span>&copy; 2026 Ashok Kumar. All rights reserved.</span>
+            <span class="footer-note">A little clarity. A lot of intention.</span>
+            <a href="#hero-sec" class="back-to-top" aria-label="Back to top">
+                <span>Back to top</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
             </a>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
-    <script src="script.js?v=3.2" defer></script>
+    <script src="script.js?v=6.0" defer></script>
 </body>
-
 </html>

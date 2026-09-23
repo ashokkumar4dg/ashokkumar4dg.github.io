@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        (function() {
-            const storedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', storedTheme);
-        })();
-    </script>
     <meta name="description" content="Case study detail view of design and development projects by Ashok Kumar.">
     <title>Project Details | Ashok Kumar</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/Logo1.webp">
+    <link rel="icon" type="image/svg+xml" href="assets/Logo_blk.svg">
     
     <!-- External Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +32,7 @@
     <header class="navbar" id="main-navbar">
         <div class="navbar-container">
             <a href="index.html" class="nav-logo" id="logo-link">
-                <img src="assets/Logo1.webp" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img" loading="eager">
+                <img src="assets/Logo_blk.svg" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img" loading="eager">
             </a>
             
             <nav class="nav-menu" id="nav-links">
@@ -47,15 +41,6 @@
                 <a href="index.html#experience" class="nav-link">Experience</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
-            
-            <div class="navbar-actions">
-                <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark/light mode">
-                    <!-- Sun Icon for Light Mode -->
-                    <i data-lucide="sun" class="sun-icon"></i>
-                    <!-- Moon Icon for Dark Mode -->
-                    <i data-lucide="moon" class="moon-icon"></i>
-                </button>
-            </div>
         </div>
     </header>
 
