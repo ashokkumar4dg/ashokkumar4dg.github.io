@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Man Series Case Study — Shopify E-commerce & UI/UX Design by Ashok Kumar. Ingredient-led digital experience for a modern D2C skincare brand.">
+    <meta name="description" content="Man Series Case Study — Shopify E-commerce & UI/UX Design by Ashok Kumar. Ingredient-led digital experience for a modern D2C skincare brand.">
     <title>Man Series — Shopify E-commerce Design | Ashok Kumar</title>
 
     <!-- Favicon -->
@@ -15,61 +14,74 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="../style.css?v=2.0">
+    <!-- Stylesheets (Design System & Case Study) -->
+    <link rel="stylesheet" href="../style.css?v=6.0">
+    <link rel="stylesheet" href="../case-studies.css?v=6.0">
 </head>
 
-<body>
-    <!-- Floating Minimal Navbar -->
+<body class="case-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Sticky Navigation (Identical to Homepage) -->
     <header class="navbar" id="main-navbar">
         <div class="navbar-container">
-            <a href="../index.html" class="nav-logo" id="logo-link">
-                <img src="../assets/Logo_blk.svg" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img" loading="eager">
-                <span class="logo-text">Ashok Kumar</span>
+            <a href="../index.html" class="nav-logo" aria-label="Ashok Kumar Home">
+                <img src="../assets/Logo_blk.svg" alt="" class="logo-img" id="nav-logo-img" width="32" height="32">
+                <span class="logo-text">Ashok Kumar<span class="logo-dot">.</span></span>
             </a>
 
-            <nav class="nav-menu" id="nav-links">
+            <nav class="nav-menu" id="nav-links" aria-label="Main navigation">
                 <a href="../index.html#work" class="nav-link">Work</a>
                 <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#services" class="nav-link">Services</a>
                 <a href="../index.html#experience" class="nav-link">Experience</a>
-                <a href="../index.html#contact" class="nav-link">Contact</a>
+                <a href="../index.html#contact" class="nav-link nav-contact">
+                    <span>Let's talk</span>
+                    <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                </a>
             </nav>
 
             <div class="navbar-actions">
-                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">
-                    <i data-lucide="menu" class="menu-open"></i>
-                    <i data-lucide="x" class="menu-close"></i>
+                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- 1. Case Study Header -->
         <section class="case-study-hero">
             <div class="section-container">
-                <a href="../index.html#work" class="case-study-back reveal-element">
-                    &larr; Back to Selected Works
+                <a href="../index.html#work" class="case-study-back" aria-label="Back to selected works">
+                    <svg class="icon-arrow-back" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    <span>Back to Selected Work</span>
                 </a>
 
-                <div class="case-study-header reveal-element">
+                <div class="case-study-header">
                     <div class="case-study-title-block">
+                        <span class="eyebrow case-study-eyebrow">01 / Digital Experience</span>
                         <h1 class="case-study-title">Man Series</h1>
-                        <span class="case-study-tag">UI/UX Design &mdash; Shopify E-commerce</span>
+                        <p class="case-study-tag">Ingredient-led D2C skincare storefront experience built on Shopify.</p>
                     </div>
 
-                    <a href="https://manseries.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="visit-live-site-btn">
-                        <span>Visit Live Site &rarr;</span>
-                    </a>
+                    <div class="case-study-actions">
+                        <a href="https://manseries.in/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <span>Visit Live Store</span>
+                            <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="case-study-meta-grid reveal-element">
+                <!-- Bento Metadata Card -->
+                <div class="case-study-meta-grid" role="region" aria-label="Project Metadata">
                     <div class="case-meta-item">
                         <span class="case-meta-label">Role</span>
-                        <span class="case-meta-value">Graphic & UI/UX Designer</span>
+                        <span class="case-meta-value">Graphic &amp; UI/UX Designer</span>
                     </div>
                     <div class="case-meta-item">
                         <span class="case-meta-label">Client</span>
@@ -77,68 +89,53 @@
                     </div>
                     <div class="case-meta-item">
                         <span class="case-meta-label">Timeline</span>
-                        <span class="case-meta-value">May 2026 &mdash; Present</span>
+                        <span class="case-meta-value">May 2026 — Present</span>
                     </div>
                     <div class="case-meta-item">
                         <span class="case-meta-label">Deliverables</span>
-                        <span class="case-meta-value">Shopify Store, UI/UX, Visual Direction</span>
+                        <span class="case-meta-value">Shopify Storefront, UI/UX, Visual Direction</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 2. The Brief Section -->
-        <section class="case-content-section">
+        <section class="case-content-section" aria-labelledby="kicker-brief">
             <div class="section-container">
-                <div class="case-grid-layout reveal-element">
-                    <div class="case-section-kicker">
-                        The Brief
-                    </div>
+                <div class="case-grid-layout">
+                    <h2 class="case-section-kicker" id="kicker-brief">The Brief</h2>
                     <div class="case-section-body">
-                        <p>
-                            As part of my role at Man Series, I designed and improved the brand's Shopify e-commerce experience, translating ingredient-led product positioning into clear, conversion-focused visual communication.
-                        </p>
+                        <p>As part of my role at Man Series, I designed and improved the brand's Shopify e-commerce experience, translating ingredient-led product positioning into clear, conversion-focused visual communication.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 3. The Approach Section -->
-        <section class="case-content-section">
+        <section class="case-content-section" aria-labelledby="kicker-approach">
             <div class="section-container">
-                <div class="case-grid-layout reveal-element">
-                    <div class="case-section-kicker">
-                        The Approach
-                    </div>
+                <div class="case-grid-layout">
+                    <h2 class="case-section-kicker" id="kicker-approach">The Approach</h2>
                     <div class="case-section-body">
-                        <p>
-                            Working directly with the founders on creative direction, I helped shape a modern digital experience for the brand. We focused on establishing clean visual hierarchies, ingredient-led product storytelling, and streamlined collection browsing tailored for mobile-first skincare shoppers.
-                        </p>
-                        <p>
-                            Every section was structured to balance scientific credibility with clean, minimalist aesthetics&mdash;ensuring ingredients, benefits, and usage routines are immediately understandable before checkout.
-                        </p>
+                        <p>Working directly with the founders on creative direction, I helped shape a modern digital experience for the brand. We focused on establishing clean visual hierarchies, ingredient-led product storytelling, and streamlined collection browsing tailored for mobile-first skincare shoppers.</p><p>Every section was structured to balance scientific credibility with clean, minimalist aesthetics—ensuring ingredients, benefits, and usage routines are immediately understandable before checkout.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. The Work Section (Multi-Device Mockups Showcase) -->
-        <section class="case-content-section">
+        <!-- 4. The Work / Visual Showcase Section -->
+        <section class="case-content-section" aria-labelledby="kicker-work">
             <div class="section-container">
-                <div class="case-grid-layout reveal-element">
-                    <div class="case-section-kicker">
-                        The Work
-                    </div>
+                <div class="case-grid-layout">
+                    <h2 class="case-section-kicker" id="kicker-work">The Work</h2>
                     <div class="case-section-body">
-                        <p>
-                            Desktop, tablet, and mobile responsive storefront experiences designed for the live Man Series D2C skincare store.
-                        </p>
+                        <p>Desktop, tablet, and mobile responsive storefront experiences designed for the live Man Series D2C skincare store.</p>
                     </div>
                 </div>
 
                 <!-- Primary Desktop Mockup -->
                 <a href="https://manseries.in/" target="_blank" rel="noopener noreferrer" class="case-media-link" title="Open Live Store (manseries.in) in New Tab">
-                    <div class="case-media-wrapper reveal-element">
+                    <div class="case-media-wrapper">
                         <img src="../assets/manseries-mockup-laptop.webp?v=2.0" alt="Man Series Live Shopify Store Desktop MacBook Air Mockup by Ashok Kumar" class="case-full-image" loading="lazy">
                     </div>
                 </a>
@@ -146,13 +143,13 @@
                 <!-- Multi-Device Secondary Grid (Mobile & Tablet) -->
                 <div class="case-mockups-grid">
                     <a href="https://manseries.in/" target="_blank" rel="noopener noreferrer" class="case-media-link" title="Open Live Store (manseries.in) in New Tab">
-                        <div class="case-media-wrapper reveal-element">
+                        <div class="case-media-wrapper">
                             <img src="../assets/manseries-mockup-mobile.webp?v=2.0" alt="Man Series Mobile iPhone Storefront Mockup by Ashok Kumar" class="case-full-image" loading="lazy">
                         </div>
                     </a>
 
                     <a href="https://manseries.in/" target="_blank" rel="noopener noreferrer" class="case-media-link" title="Open Live Store (manseries.in) in New Tab">
-                        <div class="case-media-wrapper reveal-element">
+                        <div class="case-media-wrapper">
                             <img src="../assets/manseries-mockup-tablet.webp?v=2.0" alt="Man Series Tablet iPad Storefront Mockup by Ashok Kumar" class="case-full-image" loading="lazy">
                         </div>
                     </a>
@@ -161,16 +158,12 @@
         </section>
 
         <!-- 5. The Result Section -->
-        <section class="case-content-section">
+        <section class="case-content-section" aria-labelledby="kicker-result">
             <div class="section-container">
-                <div class="case-grid-layout reveal-element">
-                    <div class="case-section-kicker">
-                        The Result
-                    </div>
+                <div class="case-grid-layout">
+                    <h2 class="case-section-kicker" id="kicker-result">The Result</h2>
                     <div class="case-section-body">
-                        <p>
-                            The live storefront delivers an intuitive, elevated shopping journey supporting brand growth, customer trust, and engagement across the competitive D2C skincare market.
-                        </p>
+                        <p>The live storefront delivers an intuitive, elevated shopping journey supporting brand growth, customer trust, and engagement across the competitive D2C skincare market.</p>
                     </div>
                 </div>
             </div>
@@ -180,9 +173,10 @@
         <section class="case-next-project-bar">
             <div class="section-container case-next-container">
                 <div>
-                    <span class="section-kicker">Next Up</span>
+                    <span class="next-project-kicker">Next Case Study</span>
                     <a href="branding-systems.html" class="next-project-link">
-                        Identity & Branding Systems &rarr;
+                        <span>Identity & Branding Systems</span>
+                        <svg class="icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
                     </a>
                 </div>
 
@@ -196,18 +190,17 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="section-container footer-container">
-            <div class="footer-copy">
-                &copy; 2026 Ashok Kumar. Designed with intention.
-            </div>
-            <a href="#" class="back-to-top" id="scroll-to-top" aria-label="Back to top">
-                <span>Back to Top &uarr;</span>
+            <span>&copy; 2026 Ashok Kumar. All rights reserved.</span>
+            <span class="footer-note">A little clarity. A lot of intention.</span>
+            <a href="#main" class="back-to-top" aria-label="Back to top">
+                <span>Back to top</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
             </a>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
-    <script src="../script.js?v=2.0" defer></script>
+    <script src="../script.js?v=6.0" defer></script>
 </body>
 
 </html>

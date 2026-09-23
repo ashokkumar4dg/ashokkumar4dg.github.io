@@ -1,255 +1,341 @@
+/* ==========================================================================
+   Case Studies - Ashok Kumar Portfolio
+   Synchronized with Homepage Editorial Minimalist Design System
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero & Header Area
+   -------------------------------------------------------------------------- */
 .case-study-hero {
-    padding: 140px 0 60px 0;
+  padding: var(--space-3xl) 0 var(--space-2xl) 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-primary);
 }
 
 .case-study-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 8px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-2xl);
+  transition: all var(--transition-base);
 }
 
 .case-study-back:hover {
-    color: var(--text-primary);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+  background: var(--accent-blue-subtle);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: translateX(-4px);
+}
+
+.case-study-back .icon-arrow-back {
+  transition: transform var(--transition-base);
+}
+
+.case-study-back:hover .icon-arrow-back {
+  transform: translateX(-2px);
 }
 
 .case-study-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
 }
 
 .case-study-title-block {
-    max-width: 700px;
+  max-width: 720px;
+}
+
+.case-study-eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
 }
 
 .case-study-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    margin-bottom: 0.75rem;
+  font-size: clamp(38px, 5.2vw, 68px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
 }
 
 .case-study-tag {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    font-weight: 500;
+  display: block;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  font-weight: 400;
 }
 
+/* --------------------------------------------------------------------------
+   Bento Metadata Card Grid (Clean, High-End Card)
+   -------------------------------------------------------------------------- */
 .case-study-meta-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
 }
 
 .case-meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  border-left: 2px solid var(--border);
+  padding-left: var(--space-md);
+}
+
+.case-meta-item:first-child {
+  border-left-color: var(--accent-blue);
 }
 
 .case-meta-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-blue);
 }
 
 .case-meta-value {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
 }
 
-/* Content Sections */
+/* --------------------------------------------------------------------------
+   Content Sections (Editorial 2-Column Rhythm)
+   -------------------------------------------------------------------------- */
 .case-content-section {
-    padding: 90px 0;
-    border-bottom: 1px solid var(--border);
+  padding: var(--space-3xl) 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .case-content-section:last-of-type {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .case-grid-layout {
-    display: grid;
-    grid-template-columns: 0.35fr 0.65fr;
-    gap: 4rem;
-    align-items: flex-start;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-3xl);
+  align-items: flex-start;
 }
 
 .case-section-kicker {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.case-section-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-blue);
 }
 
 .case-section-body {
-    font-size: 1.1rem;
-    line-height: 1.75;
-    color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 68ch;
 }
 
 .case-section-body p {
-    margin-bottom: 1.5rem;
+  margin-bottom: var(--space-md);
 }
 
 .case-section-body p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-/* Full-bleed Showcase Image */
+/* --------------------------------------------------------------------------
+   Showcase Media Wrappers
+   -------------------------------------------------------------------------- */
 .case-media-link {
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .case-media-wrapper {
-    width: 100%;
-    margin: 2rem 0 0 0;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
-    background-color: var(--bg-secondary);
-    overflow: hidden;
-    transition: transform var(--transition-smooth), border-color var(--transition-fast);
+  width: 100%;
+  margin-top: var(--space-2xl);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-smooth), border-color var(--transition-fast), box-shadow var(--transition-smooth);
 }
 
-.case-media-link:hover .case-media-wrapper {
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
+.case-media-link:hover .case-media-wrapper,
+.case-media-wrapper:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
 }
 
 .case-full-image {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .case-mockups-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
 }
 
 .case-mockups-grid .case-media-wrapper {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+  margin-top: 0;
 }
 
-.case-mockups-grid .case-full-image {
-    max-height: 480px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* Next Project Footer Bar */
+/* --------------------------------------------------------------------------
+   Next Project Navigation Bar
+   -------------------------------------------------------------------------- */
 .case-next-project-bar {
-    padding: 80px 0 100px 0;
-    border-top: 1px solid var(--border);
+  padding: var(--space-3xl) 0 var(--space-4xl);
+  border-top: 1px solid var(--border);
+  background: var(--bg-secondary);
 }
 
 .case-next-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+}
+
+.next-project-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-blue);
+  display: block;
+  margin-bottom: var(--space-2xs);
 }
 
 .next-project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  transition: color var(--transition-fast);
 }
 
 .next-project-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+  color: var(--accent-blue);
 }
 
-@media (max-width: 768px) {
-    .case-study-hero {
-        padding: 100px 0 40px 0;
-    }
-
-    .case-study-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-    }
-
-    .case-study-meta-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-
-    .case-content-section {
-        padding: 60px 0;
-    }
-
-    .case-grid-layout {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .case-section-body {
-        font-size: 1.02rem;
-    }
-
-    .case-mockups-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+.next-project-link .icon-arrow {
+  transition: transform var(--transition-base);
 }
 
-/* ==========================================================================
-   ACCESSIBILITY & FOCUS ENHANCEMENTS
-   ========================================================================== */
-:focus-visible {
-    outline: 2px solid var(--accent-blue);
-    outline-offset: 3px;
-    border-radius: var(--radius-sm);
+.next-project-link:hover .icon-arrow {
+  transform: translate(3px, -3px);
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    .portrait-wrapper {
-        animation: none !important;
-    }
-    .portrait-pedestal {
-        animation: none !important;
-    }
-    .project-img-wrapper {
-        transform: none !important;
-    }
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .case-grid-layout {
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 800px) {
+  .case-study-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .case-study-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+
+  .case-study-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+
+  .case-content-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .case-grid-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .case-mockups-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .case-next-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 640px) {
+  .case-study-meta-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .case-meta-item {
+    padding-left: var(--space-sm);
+  }
+
+  .case-study-title {
+    font-size: clamp(32px, 8.5vw, 44px);
+  }
+
+  .case-section-kicker {
+    font-size: 19px;
+  }
+
+  .next-project-link {
+    font-size: 22px;
+  }
 }

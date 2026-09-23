@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Monsoon Memories Book Cover Case Study by Ashok Kumar. Editorial layout, typography, and print cover jacket design for independent authors.">
+    <meta name="description" content="Monsoon Memories Book Cover Case Study by Ashok Kumar. Editorial layout, typography, and print cover jacket design for independent authors.">
     <title>Monsoon Memories — Book Cover Design | Ashok Kumar</title>
 
     <!-- Favicon -->
@@ -15,58 +14,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="../style.css?v=2.0">
+    <!-- Stylesheets (Design System & Case Study) -->
+    <link rel="stylesheet" href="../style.css?v=6.0">
+    <link rel="stylesheet" href="../case-studies.css?v=6.0">
 </head>
 
-<body>
-    <!-- Floating Minimal Navbar -->
+<body class="case-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Sticky Navigation (Identical to Homepage) -->
     <header class="navbar" id="main-navbar">
         <div class="navbar-container">
-            <a href="../index.html" class="nav-logo" id="logo-link">
-                <img src="../assets/Logo_blk.svg" alt="Ashok Kumar Logo" class="logo-img" id="nav-logo-img" loading="eager">
-                <span class="logo-text">Ashok Kumar</span>
+            <a href="../index.html" class="nav-logo" aria-label="Ashok Kumar Home">
+                <img src="../assets/Logo_blk.svg" alt="" class="logo-img" id="nav-logo-img" width="32" height="32">
+                <span class="logo-text">Ashok Kumar<span class="logo-dot">.</span></span>
             </a>
 
-            <nav class="nav-menu" id="nav-links">
+            <nav class="nav-menu" id="nav-links" aria-label="Main navigation">
                 <a href="../index.html#work" class="nav-link">Work</a>
                 <a href="../index.html#about" class="nav-link">About</a>
+                <a href="../index.html#services" class="nav-link">Services</a>
                 <a href="../index.html#experience" class="nav-link">Experience</a>
-                <a href="../index.html#contact" class="nav-link">Contact</a>
+                <a href="../index.html#contact" class="nav-link nav-contact">
+                    <span>Let's talk</span>
+                    <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                </a>
             </nav>
 
             <div class="navbar-actions">
-                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Toggle mobile menu">
-                    <i data-lucide="menu" class="menu-open"></i>
-                    <i data-lucide="x" class="menu-close"></i>
+                <button class="mobile-menu-btn" id="mobile-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- 1. Case Study Header -->
         <section class="case-study-hero">
             <div class="section-container">
-                <a href="../index.html#work" class="case-study-back reveal-element">
-                    &larr; Back to Selected Works
+                <a href="../index.html#work" class="case-study-back" aria-label="Back to selected works">
+                    <svg class="icon-arrow-back" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    <span>Back to Selected Work</span>
                 </a>
 
-                <div class="case-study-header reveal-element">
+                <div class="case-study-header">
                     <div class="case-study-title-block">
+                        <span class="eyebrow case-study-eyebrow">02 / Editorial &amp; Print</span>
                         <h1 class="case-study-title">Monsoon Memories</h1>
-                        <span class="case-study-tag">Editorial &amp; Book Cover Design</span>
+                        <p class="case-study-tag">Editorial layout, typography, and atmospheric print cover jacket design.</p>
                     </div>
 
-                    <a href="../index.html#contact" class="btn btn-primary">
-                        <span>Commission a Cover &rarr;</span>
-                    </a>
+                    <div class="case-study-actions">
+                        <a href="../index.html#contact" class="btn btn-primary">
+                            <span>Commission a Cover</span>
+                            <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="case-study-meta-grid reveal-element">
+                <!-- Bento Metadata Card -->
+                <div class="case-study-meta-grid" role="region" aria-label="Project Metadata">
                     <div class="case-meta-item">
                         <span class="case-meta-label">Role</span>
                         <span class="case-meta-value">Book Cover &amp; Editorial Designer</span>
@@ -88,68 +100,52 @@
         </section>
 
         <!-- 2. The Brief Section -->
-        <section class="case-content-section">
+        <section class="case-content-section" aria-labelledby="kicker-brief">
             <div class="section-container">
-                <div class="case-grid-layout reveal-element">
-                    <div class="case-section-kicker">
-                        The Brief
-                    </div>
+                <div class="case-grid-layout">
+                    <h2 class="case-section-kicker" id="kicker-brief">The Brief</h2>
                     <div class="case-section-body">
-                        <p>
-                            The author required an evocative, emotionally resonant cover design that stands out in both digital bookstore thumbnails and physical bookstore shelves, encapsulating the bittersweet themes of nostalgia and monsoon memories.
-                        </p>
+                        <p>The author required an evocative, emotionally resonant cover design that stands out in both digital bookstore thumbnails and physical bookstore shelves, encapsulating the bittersweet themes of nostalgia and monsoon memories.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 3. The Approach Section -->
-        <section class="case-content-section">
+        <section class="case-content-section" aria-labelledby="kicker-approach">
             <div class="section-container">
-                <div class="case-grid-layout reveal-element">
-                    <div class="case-section-kicker">
-                        The Approach
-                    </div>
+                <div class="case-grid-layout">
+                    <h2 class="case-section-kicker" id="kicker-approach">The Approach</h2>
                     <div class="case-section-body">
-                        <p>
-                            I crafted an atmospheric illustration paired with refined, classic editorial typography. The spine and back jacket were precisely calibrated to print production specifications, ensuring perfect bleeds, barcode placement, and author bio readability.
-                        </p>
+                        <p>I crafted an atmospheric illustration paired with refined, classic editorial typography. The spine and back jacket were precisely calibrated to print production specifications, ensuring perfect bleeds, barcode placement, and author bio readability.</p><p>The typographic hierarchy gives prominence to the title while keeping author credits grounded, achieving an authentic literary aesthetic.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. The Work Section -->
-        <section class="case-content-section">
+        <!-- 4. The Work / Visual Showcase Section -->
+        <section class="case-content-section" aria-labelledby="kicker-work">
             <div class="section-container">
-                <div class="case-grid-layout reveal-element">
-                    <div class="case-section-kicker">
-                        The Work
-                    </div>
+                <div class="case-grid-layout">
+                    <h2 class="case-section-kicker" id="kicker-work">The Work</h2>
                     <div class="case-section-body">
-                        <p>
-                            Full cover jacket layout featuring front cover art, typography lockup, spine hierarchy, and blurb formatting.
-                        </p>
+                        <p>Full cover jacket layout featuring front cover art, typography lockup, spine hierarchy, and blurb formatting.</p>
                     </div>
                 </div>
 
-                <div class="case-media-wrapper reveal-element">
+                <div class="case-media-wrapper">
                     <img src="../assets/Book Cover/mansoonmemoriesFront.webp" alt="Monsoon Memories Book Cover Design by Ashok Kumar" class="case-full-image" loading="lazy">
                 </div>
             </div>
         </section>
 
         <!-- 5. The Result Section -->
-        <section class="case-content-section">
+        <section class="case-content-section" aria-labelledby="kicker-result">
             <div class="section-container">
-                <div class="case-grid-layout reveal-element">
-                    <div class="case-section-kicker">
-                        The Result
-                    </div>
+                <div class="case-grid-layout">
+                    <h2 class="case-section-kicker" id="kicker-result">The Result</h2>
                     <div class="case-section-body">
-                        <p>
-                            A market-ready, professional cover design that achieved immediate praise from readers and reviewers, boosting pre-order interest and marketplace visibility.
-                        </p>
+                        <p>A market-ready, professional cover design that achieved immediate praise from readers and reviewers, boosting pre-order interest and marketplace visibility.</p>
                     </div>
                 </div>
             </div>
@@ -159,9 +155,10 @@
         <section class="case-next-project-bar">
             <div class="section-container case-next-container">
                 <div>
-                    <span class="section-kicker">Next Up</span>
+                    <span class="next-project-kicker">Next Case Study</span>
                     <a href="poster-design.html" class="next-project-link">
-                        Swiss Typographic Posters &rarr;
+                        <span>Swiss Typographic Posters</span>
+                        <svg class="icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
                     </a>
                 </div>
 
@@ -175,18 +172,17 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="section-container footer-container">
-            <div class="footer-copy">
-                &copy; 2026 Ashok Kumar. Designed with intention.
-            </div>
-            <a href="#" class="back-to-top" id="scroll-to-top" aria-label="Back to top">
-                <span>Back to Top &uarr;</span>
+            <span>&copy; 2026 Ashok Kumar. All rights reserved.</span>
+            <span class="footer-note">A little clarity. A lot of intention.</span>
+            <a href="#main" class="back-to-top" aria-label="Back to top">
+                <span>Back to top</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
             </a>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
-    <script src="../script.js?v=2.0" defer></script>
+    <script src="../script.js?v=6.0" defer></script>
 </body>
 
 </html>
